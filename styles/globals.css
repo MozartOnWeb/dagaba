@@ -1,0 +1,28 @@
+:root {
+  /* colors */
+  --green: #2a9d8f;
+  --yellow: #ffde8d;
+  --white: #ffffff;
+
+  /* fonts */
+  font-family: "montserrat";
+}
+
+html {
+  font-size: 62.5%;
+  font-family: var(--montserrat);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--green);
+  color: var(--white);
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5em;
+}

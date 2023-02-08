@@ -1,91 +1,182 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+import Image from "next/image";
+import Link from "next/link";
 
-const inter = Inter({ subsets: ['latin'] })
+import CustomVideo from "@/components/customVideo/CustomVideo";
+
+import styles from "./home.module.css";
+
+import {
+  FacebookIcon,
+  YouTubeIcon,
+  TikTokIcon,
+  BookIcon,
+  CalendarIcon,
+  HealthCareIcon,
+  CheckIcon,
+} from "@/public/assets/icons";
+
+import firstImage from "../public/images/1.jpg";
+import secondImage from "../public/images/2.jpg";
+
+export const metadata = {
+  title: "Accueil",
+  description: "Bienvenu sur APROPHAM DAGABA",
+};
+
+const socialNetwork = [
+  {
+    name: "Facebook",
+    link: "https://facebook.com",
+    Icon: FacebookIcon,
+  },
+  {
+    name: "TikTok",
+    link: "https://tiktok.com",
+    Icon: TikTokIcon,
+  },
+  {
+    name: "YouTube",
+    link: "https://youtube.com",
+    Icon: YouTubeIcon,
+  },
+];
+
+const whyUs = [
+  {
+    Icon: BookIcon,
+    title: "+25 ans d’expérience",
+    content:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    Icon: CalendarIcon,
+    title: "24/7 service disponible",
+    content:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    Icon: HealthCareIcon,
+    title: "+2000 remèdes",
+    content:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+];
+
+const howWeHelp = [
+  {
+    title: "Consultations et suivis",
+  },
+  {
+    title: "Concoction de médicaments",
+  },
+  {
+    title: "Inventaire avec +2000 remèdes",
+  },
+];
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main>
+      <main className={styles.main}>
+        <section>
+          <h1>
+            APROPHAM, <br /> la nature aux bons soins des humains
+            <span>.</span>
+          </h1>
+          <p>
+            Créer en 1994, APROPHAM produit des médicaments à base de plantes à
+            100%. Toute la chaîne de production est gérée par APROPHAM de la
+            récolte des plantes à l&apos;emballage du médicament finals
+            <span>.</span>
+          </p>
+          <div className={styles.socialWrapper}>
+            <h3>réseaux sociaux</h3>
+            <div className={styles.socialContainer}>
+              {socialNetwork.map((social) => (
+                <div key={social.name}>
+                  <div>
+                    <Link target={"_blank"} href={social.link}>
+                      <social.Icon />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.rightSection}>
+          <div>
+            <Image src={firstImage} alt="DAGABA welcome image" />
+          </div>
+        </section>
+      </main>
+
+      {/* SEPARATOR */}
+      <div className={styles.sectionSeparator}>
+        <div />
+        <h4>DAGABA, Essayer c’est déjà réussir !</h4>
+        <div />
+      </div>
+
+      {/* PRESENTATION */}
+      <section className={styles.presentation}>
+        <h4>Présentation</h4>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+          DAGABA possède aujourd’hui plus de 2000 remèdes au niveau de son
+          cabinet et les recherches continuent. La santé, la propriété, la paix,
+          le développement ont toujours été l’objectif constamment visé par
+          APROPHAM DAGABA.
         </p>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+          <CustomVideo />
         </div>
-      </div>
+      </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+      {/* POURQUOI NOUS CHOISIR */}
+      <section className={styles.whyUsWrapper}>
+        <h4>Pourquoi nous choisir ?</h4>
+        <div>
+          {whyUs.map((item) => (
+            <div className={styles.whyUsItem} key={item.title}>
+              <item.Icon />
+              <h5>
+                {item.title}
+                <span>.</span>
+              </h5>
+              <p>{item.content}</p>
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
+      {/* COMMENT ON VOUS AIDE */}
+      <section className={styles.howWeHelpWrapper}>
+        <div className={styles.imageWrapper}>
+          <Image src={secondImage} alt="Dagaba doctor" />
+        </div>
+
+        <div className={styles.helpWrapper}>
+          <h4>Comment dagaba aide les patients ?</h4>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
           </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <div className={styles.checkBoxWrapper}>
+            {howWeHelp.map((item) => (
+              <div className={styles.checkBoxItem} key={item.title}>
+                <div>
+                  <CheckIcon />
+                </div>
+                <h6>{item.title}</h6>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
-  )
+  );
 }
