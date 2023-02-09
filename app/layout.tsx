@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import NavBar from "@/components/navbar/NavBar";
+import Footer from "@/components/footer/Footer";
 
 import { montserrat, clashDisplay } from "@/public/fonts";
 
@@ -45,6 +46,7 @@ export default function RootLayout({
         <div className="wrapper">
           <NavBar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

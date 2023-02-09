@@ -1,0 +1,148 @@
+/* .wrapper {
+} */
+
+.topContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3em;
+}
+
+.logoContainer {
+  width: 25%;
+}
+
+.logoContainer h2 {
+  font-family: var(--clashDisplay);
+}
+
+.logoContainer p {
+  font-size: 1.2rem;
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+
+/* .linksItem {
+} */
+
+.linksItem h6 {
+  color: var(--yellow);
+  font-family: var(--clashDisplay);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.linksItem a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.5s ease;
+  text-transform: capitalize;
+}
+
+.linksItem p {
+  font-size: 1.2rem;
+}
+
+.linksItem div {
+  display: flex;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.linksItem div p {
+  margin: 0 0 0 1em;
+}
+
+.linksItem div svg {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0;
+}
+
+/* SEPARATOR */
+.separatorWrapper {
+  margin-bottom: 1em;
+}
+
+.separatorLine {
+  width: 100vw;
+  height: 1px;
+  background-color: var(--yellow);
+  margin-left: -5em;
+}
+.socialWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+
+.socialWrapper div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4em;
+  height: 4em;
+  background-color: var(--yellow);
+  border-radius: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.copyrightWrapper {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.copyrightWrapper h3 {
+  font-family: var(--clashDisplay);
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.copyrightWrapper :nth-child(2) {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 850px) {
+  .topContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .logoContainer {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3em;
+  }
+  .linksContainer {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .linksContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .linksContainer div {
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+
+  .linksContainer :nth-child(3) svg {
+    margin-bottom: 0.5em;
+  }
+}
