@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import CustomVideo from "@/components/customVideo/CustomVideo";
+import { ProductItem } from "@/components/homeProductItem/ProductItem";
 
 import styles from "./home.module.css";
 
@@ -13,6 +14,7 @@ import {
   CalendarIcon,
   HealthCareIcon,
   CheckIcon,
+  SeeMoreArrowIcon,
 } from "@/public/assets/icons";
 
 import firstImage from "../public/images/1.jpg";
@@ -176,6 +178,25 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* BEST CATEGORIES WRAPPER */}
+      <section className={styles.bestCategories}>
+        <h4>Produits phares</h4>
+        <div className={styles.productContainer}>
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+          <ProductItem />
+        </div>
+
+        <Link className={styles.seeMoreBtn} href={"/categories"}>
+          <p>en voir plus</p>
+          <div>
+            <SeeMoreArrowIcon />
+          </div>
+        </Link>
       </section>
     </main>
   );

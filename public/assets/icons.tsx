@@ -329,3 +329,33 @@ export const MessageIcon = () => {
     </svg>
   );
 };
+
+export const SeeMoreArrowIcon = () => {
+  return (
+    <svg
+      width="30"
+      height="22"
+      viewBox="0 0 30 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M19.0502 0.883301L29.1668 11L19.0502 21.1166"
+        stroke="#FFDE8D"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        opacity="0.4"
+        d="M0.833374 11H28.8834"
+        stroke="#FFDE8D"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
