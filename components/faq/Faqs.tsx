@@ -40,13 +40,13 @@ const faqsArray = [
 ];
 
 function Faqs() {
-  const [expand, setExpand] = useState({});
+  const [expandedQuestion, setExpandedQuestion] = useState("");
 
   const handleExpand = (question: string) => {
-    if (expand === question) {
-      setExpand({});
+    if (expandedQuestion === question) {
+      setExpandedQuestion("");
     } else {
-      setExpand(question);
+      setExpandedQuestion(question);
     }
   };
 
@@ -61,7 +61,7 @@ function Faqs() {
             </div>
           </div>
 
-          {expand === item.headline && <p>{item.content}</p>}
+          {expandedQuestion === item.headline && <p>{item.content}</p>}
         </div>
       ))}
     </div>
