@@ -1,0 +1,46 @@
+.faqWrapper {
+}
+
+.singleFaqWrapper {
+  margin-bottom: 3.5em;
+}
+
+.singleFaqWrapper > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.singleFaqWrapper > div::after {
+  content: "";
+  background-color: var(--yellow);
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 3.5em;
+}
+
+.singleFaqWrapper > div h6 {
+  font-family: var(--clashDisplay);
+  color: var(--yellow);
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.singleFaqWrapper > div div {
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.singleFaqWrapper p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-top: 2em;
+  transition: all 0.5s ease;
+}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import CustomVideo from "@/components/customVideo/CustomVideo";
+import Faqs from "@/components/faq/Faqs";
 import { ProductItem } from "@/components/homeProductItem/ProductItem";
 
 import styles from "./home.module.css";
@@ -197,6 +198,13 @@ export default function Home() {
             <SeeMoreArrowIcon />
           </div>
         </Link>
+      </section>
+
+      {/* BEST CATEGORIES WRAPPER */}
+
+      <section className={styles.faqWrapper}>
+        <h4>Foire aux questions</h4>
+        <Faqs />
       </section>
     </main>
   );
