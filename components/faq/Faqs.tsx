@@ -53,10 +53,14 @@ function Faqs() {
   return (
     <div className={styles.faqWrapper}>
       {faqsArray.map((item, index) => (
-        <div className={styles.singleFaqWrapper} key={index}>
+        <div
+          onClick={() => handleExpand(item.headline)}
+          className={styles.singleFaqWrapper}
+          key={index}
+        >
           <div>
             <h6>{item.headline}</h6>
-            <div onClick={() => handleExpand(item.headline)}>
+            <div>
               {expandedQuestion === item.headline ? (
                 <CloseArrowIcon />
               ) : (
