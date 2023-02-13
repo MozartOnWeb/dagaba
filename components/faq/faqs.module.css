@@ -36,6 +36,7 @@
 }
 
 .singleFaqWrapper p {
+  font-family: var(--montserrat);
   font-size: 1.6rem;
   font-weight: 400;
   animation: paragraph 0.5s ease;
