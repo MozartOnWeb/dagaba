@@ -4,12 +4,12 @@ import React, { useState } from "react";
 
 import styles from "./faqs.module.css";
 
-import { ExpandArrowIcon } from "@/public/assets/icons";
+import { ExpandArrowIcon, CloseArrowIcon } from "@/public/assets/icons";
 
 const faqsArray = [
   {
     id: 0,
-    headline: "Qu'est ce que Dagaba ?",
+    headline: "Qu'est ce que APROPHAM ?",
     content:
       "In fermentum posuere urna nec tincidunt praesent. Netus et malesuada fames ac turpis egestas. Orci sagittis eu volutpat odio facilisis. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Leo duis ut diam quam nulla porttitor massa id.",
   },
@@ -40,7 +40,7 @@ const faqsArray = [
 ];
 
 function Faqs() {
-  const [expandedQuestion, setExpandedQuestion] = useState("");
+  const [expandedQuestion, setExpandedQuestion] = useState<string>("");
 
   const handleExpand = (question: string) => {
     if (expandedQuestion === question) {
@@ -57,7 +57,11 @@ function Faqs() {
           <div>
             <h6>{item.headline}</h6>
             <div onClick={() => handleExpand(item.headline)}>
-              <ExpandArrowIcon />
+              {expandedQuestion === item.headline ? (
+                <CloseArrowIcon />
+              ) : (
+                <ExpandArrowIcon />
+              )}
             </div>
           </div>
 
