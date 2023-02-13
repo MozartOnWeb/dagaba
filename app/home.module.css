@@ -448,6 +448,9 @@
   .presentation > div {
     width: 100%;
   }
+  .howWeHelpWrapper {
+    margin-left: -2em;
+  }
 }
 
 @media screen and (max-width: 375px) {
