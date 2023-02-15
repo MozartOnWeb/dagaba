@@ -18,6 +18,15 @@
   border: 1px solid var(--yellow);
 }
 
+.container div {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--yellow);
+}
+
 .container img {
   width: 70%;
   height: 70%;

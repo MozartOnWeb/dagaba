@@ -10,7 +10,9 @@ export const ProductItem = () => {
     <div className={styles.wrapper}>
       <Link href={"#"}>
         <div className={styles.container}>
-          <Image src={Product} alt="product image" />
+          <div>
+            <Image src={Product} alt="product image" />
+          </div>
         </div>
         <p>HEPA GELLULES</p>
       </Link>

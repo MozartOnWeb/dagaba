@@ -26,7 +26,7 @@ const Footer = () => {
           <div className={styles.linksItem}>
             <h6>Accueil</h6>
             <p>
-              <Link href={"#"}>Présentation</Link>
+              <Link href="#">Présentation</Link>
             </p>
             <p>
               <Link href={"#"}>Pourquoi nous choisir ?</Link>
@@ -38,13 +38,13 @@ const Footer = () => {
           <div className={styles.linksItem}>
             <h6>Liens utiles</h6>
             <p>
-              <Link href={"#"}>Accueil</Link>
+              <Link href={"/"}>Accueil</Link>
             </p>
             <p>
-              <Link href={"#"}>Catégories</Link>
+              <Link href={"/categories"}>Catégories</Link>
             </p>
             <p>
-              <Link href={"#"}>à propos</Link>
+              <Link href={"/about"}>à propos</Link>
             </p>
           </div>
           <div className={styles.linksItem}>
