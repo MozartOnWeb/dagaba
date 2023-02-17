@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "./categories.module.css";
+import styles from "./styles.module.css";
 
 import { CategoryItem } from "@/components/categoryItem/CategoryItem";
 

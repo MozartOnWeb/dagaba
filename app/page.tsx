@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import CustomVideo from "@/components/customVideo/CustomVideo";
 import Faqs from "@/components/faq/Faqs";
-import { ProductItem } from "@/components/homeProductItem/ProductItem";
+import { ProductItem } from "@/components/productItem/ProductItem";
 
 import styles from "./home.module.css";
 
