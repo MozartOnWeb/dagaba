@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "./product.module.css";
+import styles from "./styles.module.css";
 
 import Product from "@/public/images/package.png";
 
