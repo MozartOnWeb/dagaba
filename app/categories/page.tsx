@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import styles from "./categories.module.css";
 
+import { CategoryItem } from "@/components/categoryItem/CategoryItem";
+
 import HeroImage from "@/public/images/1.jpg";
 
 export const metadata = {
@@ -30,7 +32,17 @@ export default function Categories() {
       </section>
 
       {/* CATEGORIES SECTION */}
-      <section className={styles.categories}></section>
+      <section className={styles.categories}>
+        <h4>Catégories</h4>
+        <div className={styles.productContainer}>
+          <CategoryItem />
+          <CategoryItem />
+          <CategoryItem />
+          <CategoryItem />
+          <CategoryItem />
+          <CategoryItem />
+        </div>
+      </section>
     </main>
   );
 }

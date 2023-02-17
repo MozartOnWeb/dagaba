@@ -55,6 +55,25 @@
   margin: 0px;
   align-self: center;
 }
+
+/* CATEGORIES SECTION */
+.categories {
+  margin-top: 7em;
+}
+
+.categories h4 {
+  font-family: var(--clashDisplay);
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.productContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 800px) {
   .hero p {
     width: 90%;
@@ -75,5 +94,10 @@
   .hero p {
     font-size: 1.2rem;
     width: 100%;
+  }
+
+  /* CATEGORIES SECTION */
+  .categories h4 {
+    font-size: 2.6rem;
   }
 }
