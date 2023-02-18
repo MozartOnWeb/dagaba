@@ -132,6 +132,17 @@
   }
 }
 
+@media screen and (max-width: 420px) {
+  .separatorLine {
+    margin-left: -2em;
+  }
+
+  .linksItem a,
+  .linksItem p {
+    font-size: 1.4rem;
+  }
+}
+
 @media screen and (max-width: 380px) {
   .linksContainer {
     text-align: center;

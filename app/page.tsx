@@ -110,7 +110,11 @@ export default function Home() {
 
         <section className={styles.rightSection}>
           <div>
-            <Image src={firstImage} alt="DAGABA welcome image" />
+            <Image
+              priority={true}
+              src={firstImage}
+              alt="DAGABA welcome image"
+            />
           </div>
         </section>
       </main>

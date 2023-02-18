@@ -82,6 +82,8 @@
   object-fit: cover;
 }
 
+/* SEPARATOR */
+
 .sectionSeparator {
   margin-top: 10em;
 }
@@ -91,8 +93,6 @@
   background-color: var(--white);
   height: 1px;
 }
-
-/* SEPARATOR */
 
 .sectionSeparator h4 {
   -webkit-text-stroke: 1px var(--yellow);

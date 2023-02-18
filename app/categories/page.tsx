@@ -17,7 +17,11 @@ export default function Categories() {
       {/* HERO SECTION */}
       <section className={styles.hero}>
         <div>
-          <Image src={HeroImage} alt="dagaba catégories image" />
+          <Image
+            priority={true}
+            src={HeroImage}
+            alt="dagaba catégories image"
+          />
         </div>
         <h3>
           Pharmacopée Dagaba, chez <span>Mouleikafouf</span>.
@@ -35,12 +39,12 @@ export default function Categories() {
       <section className={styles.categories}>
         <h4>Catégories</h4>
         <div className={styles.productContainer}>
-          <CategoryItem />
-          <CategoryItem />
-          <CategoryItem />
-          <CategoryItem />
-          <CategoryItem />
-          <CategoryItem />
+          <CategoryItem href="/categories/category" />
+          <CategoryItem href="/categories/category" />
+          <CategoryItem href="/categories/category" />
+          <CategoryItem href="/categories/category" />
+          <CategoryItem href="/categories/category" />
+          <CategoryItem href="/categories/category" />
         </div>
       </section>
     </main>
