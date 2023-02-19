@@ -6,7 +6,7 @@ import styles from "./styles.module.css";
 import ProductImage from "@/public/images/1.jpg";
 
 export const metadata = {
-  title: "A Propos",
+  title: "Desma Tisane",
   description: "Ce qu'il faut savoir sur DAGABA",
 };
 
