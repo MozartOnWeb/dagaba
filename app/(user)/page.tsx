@@ -18,8 +18,8 @@ import {
   SeeMoreArrowIcon,
 } from "@/public/assets/icons";
 
-import firstImage from "../public/images/1.jpg";
-import secondImage from "../public/images/2.jpg";
+import firstImage from "@/public/images/1.jpg";
+import secondImage from "@/public/images/2.jpg";
 
 export const metadata = {
   title: "Accueil",
