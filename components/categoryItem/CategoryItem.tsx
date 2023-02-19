@@ -8,7 +8,7 @@ import Product from "@/public/images/package.png";
 export const CategoryItem = ({ href }: { href: string }) => {
   return (
     <div className={styles.wrapper}>
-      <Link href={href}>
+      <Link prefetch={false} href={href}>
         <div className={styles.container}>
           <div>
             <Image src={Product} alt="product image" />

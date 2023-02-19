@@ -196,7 +196,11 @@ export default function Home() {
           <ProductItem />
         </div>
 
-        <Link className={styles.seeMoreBtn} href={"/categories"}>
+        <Link
+          prefetch={false}
+          className={styles.seeMoreBtn}
+          href={"/categories"}
+        >
           <p>en voir plus</p>
           <div>
             <SeeMoreArrowIcon />
