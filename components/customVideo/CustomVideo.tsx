@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 import { PlayVideoIcon, PauseVideoIcon } from "@/public/assets/icons";
 
-import styles from "./video.module.css";
+import styles from "./styles.module.css";
 
 const CustomVideo = () => {
   const [playing, setPlaying] = useState(false);

@@ -26,7 +26,11 @@ const routes = [
 ];
 
 const NavBar = () => {
-  const pathname = usePathname();
+  let pathname = usePathname() || "/";
+  if (pathname.includes("/categories/")) {
+    pathname = "/categories";
+  }
+
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>DAGABA</div>

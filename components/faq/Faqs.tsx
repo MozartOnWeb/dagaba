@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import styles from "./faqs.module.css";
+import styles from "./styles.module.css";
 
 import { ExpandArrowIcon, CloseArrowIcon } from "@/public/assets/icons";
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import CustomVideo from "@/components/customVideo/CustomVideo";
 import Faqs from "@/components/faq/Faqs";
-import { ProductItem } from "@/components/homeProductItem/ProductItem";
+import { ProductItem } from "@/components/productItem/ProductItem";
 
 import styles from "./home.module.css";
 
@@ -110,7 +110,11 @@ export default function Home() {
 
         <section className={styles.rightSection}>
           <div>
-            <Image src={firstImage} alt="DAGABA welcome image" />
+            <Image
+              priority={true}
+              src={firstImage}
+              alt="DAGABA welcome image"
+            />
           </div>
         </section>
       </main>
@@ -192,7 +196,11 @@ export default function Home() {
           <ProductItem />
         </div>
 
-        <Link className={styles.seeMoreBtn} href={"/categories"}>
+        <Link
+          prefetch={false}
+          className={styles.seeMoreBtn}
+          href={"/categories"}
+        >
           <p>en voir plus</p>
           <div>
             <SeeMoreArrowIcon />
