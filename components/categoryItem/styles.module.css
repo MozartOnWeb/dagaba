@@ -53,24 +53,19 @@
 
 @media (max-width: 429px) {
   .wrapper {
-    text-align: center;
-    width: 45%;
+    width: 100%;
     height: 14em;
   }
 }
 
 @media (max-width: 390px) {
   .wrapper {
-    text-align: center;
-    width: 45%;
     height: 16em;
   }
 }
 
 @media (max-width: 369px) {
   .wrapper {
-    text-align: center;
-    width: 100%;
     height: 25em;
   }
 }
