@@ -13,6 +13,24 @@ export const Category = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
+      name: "slug",
+      type: "slug",
+      title: "Slug",
+      options: {
+        source: "name",
+        maxLength: 50,
+      },
+    },
+    {
+      name: "image",
+      type: "image",
+      title: "Image",
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "description",
       type: "text",
       title: "Description",
