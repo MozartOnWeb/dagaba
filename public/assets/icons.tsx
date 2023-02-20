@@ -393,3 +393,32 @@ export const CloseArrowIcon = () => {
     </svg>
   );
 };
+
+export const GoBackArrowIcon = () => {
+  return (
+    <svg
+      width="20"
+      height="16"
+      viewBox="0 0 20 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        opacity="0.4"
+        d="M4.61617 15.0001H13.491C16.5529 15.0001 19.0378 12.5152 19.0378 9.45332C19.0378 6.39149 16.5529 3.90652 13.491 3.90652H1.28809"
+        stroke="#2a9d8f"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.83996 6.67992L1 3.83996L3.83996 1"
+        stroke="#2a9d8f"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
