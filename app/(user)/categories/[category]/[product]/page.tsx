@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import ScrollUp from "@/lib/ScrollUp";
+
 import styles from "./styles.module.css";
 
 import ProductImage from "@/public/images/1.jpg";
@@ -45,6 +47,7 @@ const categories = [
 export default function Product() {
   return (
     <main>
+      <ScrollUp />
       <section className={styles.main}>
         <section className={styles.imageWrapper}>
           <Image src={ProductImage} alt={`product image`} />

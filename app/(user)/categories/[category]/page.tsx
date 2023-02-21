@@ -11,6 +11,33 @@ export const metadata = {
   description: "Maladies des organes interne",
 };
 
+const DummyLinks = [
+  {
+    href: "1",
+  },
+  {
+    href: "2",
+  },
+  {
+    href: "3",
+  },
+  {
+    href: "4",
+  },
+  {
+    href: "5",
+  },
+  {
+    href: "6",
+  },
+  {
+    href: "7",
+  },
+  {
+    href: "8",
+  },
+];
+
 export default function Category() {
   return (
     <main className={styles.main}>
@@ -33,14 +60,9 @@ export default function Category() {
       <section className={styles.categories}>
         <h4>Médicaments</h4>
         <div className={styles.productContainer}>
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
+          {DummyLinks.map((item, index) => (
+            <ProductItem key={index} />
+          ))}
         </div>
       </section>
 

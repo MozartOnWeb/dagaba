@@ -1,7 +1,7 @@
-import { Rule } from "sanity";
+import { Rule, SchemaTypeDefinition } from "sanity";
 
 //medications schema
-export const Medication = {
+export const Medication: SchemaTypeDefinition = {
   name: "medication",
   type: "document",
   title: "Medication",
@@ -32,8 +32,13 @@ export const Medication = {
     },
     {
       name: "description",
-      type: "text",
+      type: "array",
       title: "Description",
+      of: [
+        {
+          type: "block",
+        },
+      ],
       validation: (Rule: Rule) => Rule.required(),
     },
     {

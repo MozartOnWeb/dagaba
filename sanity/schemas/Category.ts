@@ -1,7 +1,7 @@
-import { Rule } from "sanity";
+import { Rule, SchemaTypeDefinition } from "sanity";
 
 //medication categories schema
-export const Category = {
+export const Category:SchemaTypeDefinition = {
   name: "category",
   type: "document",
   title: "Category",
