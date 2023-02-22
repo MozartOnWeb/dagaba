@@ -73,14 +73,14 @@ export default function About() {
               <span>
                 (tisanes, sirops, gélules, poudres fines dans des emballages
                 biens propres)
-              </span>
-              . Vu le décret n° 94-282-P-RM du 15 août 1994 portant,
-              l’organisation de l’ouverture de cabinet privé de consultation et
-              de soins traditionnels, herboristerie et d’une unité de production
-              de médicaments traditionnels améliorés <span>(MTA)</span>.
-              J’obtiens une autorisation de l’exercice privé des professions
-              sanitaires n° 02 0464 / MS-SG du ministère de la santé.
-              <br /> Vu la loi n° 04-038 du 05 août 2004 relatif aux
+              </span>{" "}
+              . Vu le décret n° 94-282-P-RM du 15 août 1994
+              portant,l’organisation de l’ouverture de cabinet privé de
+              consultation et de soins traditionnels, herboristerie et d’une
+              unité de production de médicaments traditionnels améliorés{" "}
+              <span>(MTA)</span>. J’obtiens une autorisation de l’exercice privé
+              des professions sanitaires n° 02 0464 / MS-SG du ministère de la
+              santé. Vu la loi n° 04-038 du 05 août 2004 relatif aux
               associations j’obtiens une récipicé de déclaration d’association
               du 11 novembre 2004 n° 0002/G-D par le gouverneur du district de
               Bamako <span>(APROPHAM)</span>. Le 17 décembre 2004 LA NATURE AUX
