@@ -18,8 +18,8 @@ import {
   SeeMoreArrowIcon,
 } from "@/public/assets/icons";
 
-import firstImage from "../public/images/1.jpg";
-import secondImage from "../public/images/2.jpg";
+import firstImage from "@/public/images/1.jpg";
+import secondImage from "@/public/images/2.jpg";
 
 export const metadata = {
   title: "Accueil",
@@ -196,11 +196,7 @@ export default function Home() {
           <ProductItem />
         </div>
 
-        <Link
-          prefetch={false}
-          className={styles.seeMoreBtn}
-          href={"/categories"}
-        >
+        <Link className={styles.seeMoreBtn} href={"/categories"}>
           <p>en voir plus</p>
           <div>
             <SeeMoreArrowIcon />

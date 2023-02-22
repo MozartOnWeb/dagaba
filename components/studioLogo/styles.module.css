@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.imageWrapper {
+  margin: 0px 0.3em;
+  border-radius: 100%;
+}
+
+.imageWrapper img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+}
