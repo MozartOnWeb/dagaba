@@ -5,7 +5,12 @@ import styles from "./styles.module.css";
 
 import Product from "@/public/images/package.png";
 
-export const CategoryItem = ({ href }: { href: string }) => {
+type Props = {
+  href: string;
+  name: string;
+};
+
+export const CategoryItem = ({ href, name }: Props) => {
   return (
     <div className={styles.wrapper}>
       <Link href={href}>
@@ -14,7 +19,7 @@ export const CategoryItem = ({ href }: { href: string }) => {
             <Image src={Product} alt="product image" />
           </div>
         </div>
-        <p>HEPA GELLULES</p>
+        <p>{name}</p>
       </Link>
     </div>
   );
