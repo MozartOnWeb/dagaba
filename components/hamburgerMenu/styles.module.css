@@ -1,0 +1,24 @@
+.main {
+  position: absolute;
+  z-index: 10;
+  top: 5em;
+  height: 8vh;
+  width: 100%;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+}
+
+.main a {
+  text-decoration: none;
+  font-family: var(--montserrat);
+  font-size: 1.2rem;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.main a.active {
+  text-decoration: underline;
+}

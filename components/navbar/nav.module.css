@@ -30,7 +30,7 @@
   list-style: none;
 }
 
-.links li a {
+.links a {
   color: var(--white);
   text-decoration: none;
   font-family: var(--montserrat);
@@ -40,13 +40,9 @@
   transition: color 0.5s ease;
 }
 
-.links li a:hover {
+.links a.active {
   color: var(--yellow);
-}
-
-.links li a.active {
-  color: var(--yellow);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .separator {
@@ -63,5 +59,12 @@
   }
   .nav .hamburger {
     display: block;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .nav {
+    margin-bottom: 4em;
   }
 }
