@@ -61,10 +61,10 @@ export const Medication: SchemaTypeDefinition = {
     },
     {
       name: "categories",
-      type: "array",
       title: "Categories",
+      type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
-      validation: (Rule: Rule) => Rule.unique(),
+      // validation: (Rule: Rule) => Rule.unique(),
     },
   ],
 };

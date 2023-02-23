@@ -1,6 +1,9 @@
 import Image from "next/image";
 
-import { getSingleCategory } from "@/sanity/fetch";
+import {
+  getSingleCategory,
+  getSingleCategoryMedications,
+} from "@/sanity/fetch";
 
 import styles from "./styles.module.css";
 
@@ -44,6 +47,9 @@ export const revalidate = 1200;
 
 export default async function Category({ params: { category } }: Route) {
   const singleCategory: Category = await getSingleCategory({ category });
+  const medications: Medication[] = await getSingleCategoryMedications({
+    category,
+  });
 
   return (
     <main className={styles.main}>
@@ -63,8 +69,13 @@ export default async function Category({ params: { category } }: Route) {
       <section className={styles.categories}>
         <h4>Médicaments</h4>
         <div className={styles.productContainer}>
-          {DummyLinks.map((item, index) => (
-            <ProductItem key={index} />
+          {medications.map((item, index) => (
+            <ProductItem
+              image={item.image}
+              name={item.name}
+              href={item.slug}
+              key={index}
+            />
           ))}
         </div>
       </section>

@@ -24,3 +24,25 @@ export const getSingleCategory = ({ category }: { category: string }) => {
     { category }
   );
 };
+
+//get single category medications
+export const getSingleCategoryMedications = ({
+  category,
+}: {
+  category: string;
+}) => {
+  return sanityClient.fetch(
+    groq`
+        *[_type=="medication" && references(*[_type=="category" && slug.current == $category]._id)] {
+            name,
+            "slug": slug.current,
+            "image": image.asset -> url
+        }
+    `,
+    { category }
+  );
+};
+
+// *[references("151dc744-7efe-431f-a38f-a7bfb8541d45")] {
+//   categories[] ->
+// }
