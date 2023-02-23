@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { HamburgerMenu } from "../hamburgerMenu/HamburgerMenu";
+
 import { HamburgerIcon } from "@/public/assets/icons";
 
 import styles from "./nav.module.css";
@@ -33,6 +35,7 @@ const NavBar = () => {
 
   return (
     <nav className={styles.nav}>
+      <HamburgerMenu />
       <div className={styles.logo}>DAGABA</div>
 
       {/* hamburger */}
@@ -40,18 +43,17 @@ const NavBar = () => {
         <HamburgerIcon />
       </div>
       {/* nav links */}
-      <ul className={styles.links}>
+      <div className={styles.links}>
         {routes.map((route) => (
-          <li key={route.id}>
-            <Link
-              className={pathname === route.path ? styles.active : ""}
-              href={route.path}
-            >
-              {route.title}
-            </Link>
-          </li>
+          <Link
+            key={route.id}
+            className={pathname === route.path ? styles.active : ""}
+            href={route.path}
+          >
+            {route.title}
+          </Link>
         ))}
-      </ul>
+      </div>
       <div className={styles.separator} />
     </nav>
   );

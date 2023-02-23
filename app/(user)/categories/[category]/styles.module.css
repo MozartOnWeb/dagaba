@@ -113,6 +113,9 @@
 }
 
 @media screen and (max-width: 412px) {
+  .main {
+    margin: 0em;
+  }
   .hero > div img {
     height: 98%;
   }

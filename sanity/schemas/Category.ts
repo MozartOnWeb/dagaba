@@ -1,7 +1,7 @@
 import { Rule, SchemaTypeDefinition } from "sanity";
 
 //medication categories schema
-export const Category:SchemaTypeDefinition = {
+export const Category: SchemaTypeDefinition = {
   name: "category",
   type: "document",
   title: "Category",
@@ -22,13 +22,18 @@ export const Category:SchemaTypeDefinition = {
       },
     },
     {
+      name: "number_of_stock",
+      type: "number",
+      title: "Number Of Stock",
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "image",
       type: "image",
       title: "Image",
       options: {
         hotspot: true,
       },
-      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: "description",

@@ -424,11 +424,17 @@
   .main h1 {
     font-size: 5.5rem;
   }
+  .sectionSeparator {
+    margin-top: 5em;
+  }
   .sectionSeparator h4 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     margin: 1rem 0px 0.5rem 0px;
   }
 
+  .presentation {
+    margin-top: 5em;
+  }
   .presentation > div {
     width: 100%;
   }
@@ -438,10 +444,19 @@
   }
   .howWeHelpWrapper {
     margin-left: -5em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+  }
+
+  .bestCategories h4 {
+    margin-top: 1em;
   }
 }
 
 @media screen and (max-width: 420px) {
+  .main {
+    margin-top: 0em;
+  }
   .howWeHelpWrapper {
     margin-left: -2em;
   }
