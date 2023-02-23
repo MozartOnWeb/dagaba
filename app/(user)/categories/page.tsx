@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { getCategories } from "@/sanity/fetch";
+import { getAllCategories } from "@/sanity/fetch";
 
 import styles from "./styles.module.css";
 
@@ -13,8 +13,10 @@ export const metadata = {
   description: "Les catégories de produits de DAGABA",
 };
 
+export const revalidate = 1200;
+
 export default async function Categories() {
-  const categories = await getCategories();
+  const categories: Category[] = await getAllCategories();
 
   return (
     <main className={styles.main}>
@@ -43,7 +45,7 @@ export default async function Categories() {
       <section className={styles.categories}>
         <h4>Catégories</h4>
         <div className={styles.productContainer}>
-          {categories.map(({ name, slug }: any) => (
+          {categories.map(({ name, slug }) => (
             <CategoryItem key={name} name={name} href={`/categories/${slug}`} />
           ))}
         </div>

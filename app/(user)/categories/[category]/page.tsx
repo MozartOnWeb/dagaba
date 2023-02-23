@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { getSingleCategory } from "@/sanity/fetch";
+
 import styles from "./styles.module.css";
 
 import { ProductItem } from "@/components/productItem/ProductItem";
@@ -38,7 +40,11 @@ const DummyLinks = [
   },
 ];
 
-export default function Category() {
+export const revalidate = 1200;
+
+export default async function Category({ params: { category } }: Route) {
+  const singleCategory: Category = await getSingleCategory({ category });
+
   return (
     <main className={styles.main}>
       {/* HERO SECTION */}
@@ -46,14 +52,11 @@ export default function Category() {
         <div>
           <Image priority={true} src={HeroImage} alt="category image" />
         </div>
-        <h3>Maladies des organes internes.</h3>
-        <span className={styles.numberOfStock}>+350 remèdes</span>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
-        </p>
+        <h3>{singleCategory.name}</h3>
+        <span className={styles.numberOfStock}>
+          +{singleCategory.number_of_stock} remèdes
+        </span>
+        <p>{singleCategory.description}</p>
       </section>
 
       {/* CATEGORIES SECTION */}
