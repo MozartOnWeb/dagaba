@@ -59,3 +59,12 @@ export const getMedication = ({ medication }: { medication: string }) => {
     { medication }
   );
 };
+
+//get 4 recent Medication
+export const getRecentMedications = () => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == "medication"] | order(_createdAt desc) [0...3]
+    `
+  );
+};

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
 
 import { getMedication } from "@/sanity/fetch";
 
