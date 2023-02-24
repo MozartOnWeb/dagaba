@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
 
 import { getMedication } from "@/sanity/fetch";
 
@@ -13,10 +14,8 @@ const getCurrentMedication = async (medication: string) => {
   return currentMedication;
 };
 
-export async function generateMetadata({ params }: Route) {
+export async function generateMetadata({ params }: Route): Promise<Metadata> {
   const medication = await getCurrentMedication(params.medication);
-
-  console.log(medication.description);
 
   const { name, description } = medication;
 
@@ -34,12 +33,14 @@ export default async function Product({ params }: Route) {
       <ScrollUp />
       <section className={styles.main}>
         <section className={styles.imageWrapper}>
-          <Image
-            width={700}
-            height={700}
-            src={medication.image}
-            alt={`${medication.name} image`}
-          />
+          <div>
+            <Image
+              width={700}
+              height={700}
+              src={medication.image}
+              alt={`${medication.name} image`}
+            />
+          </div>
         </section>
 
         <section className={styles.infosWrapper}>

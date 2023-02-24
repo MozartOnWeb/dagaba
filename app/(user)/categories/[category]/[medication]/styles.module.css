@@ -26,10 +26,19 @@
   align-items: center;
 }
 
-.imageWrapper img {
-  width: 97%;
+.imageWrapper div {
   height: 97%;
-  object-fit: cover;
+  width: 97%;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
 }
 
 /* INFOS WRAPPER */

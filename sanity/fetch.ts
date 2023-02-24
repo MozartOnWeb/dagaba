@@ -64,7 +64,24 @@ export const getMedication = ({ medication }: { medication: string }) => {
 export const getRecentMedications = () => {
   return sanityClient.fetch(
     groq`
-        *[_type == "medication"] | order(_createdAt desc) [0...3]
+        *[_type == "medication"] | order(_createdAt desc) [0...3] {
+          name,
+            "slug": slug.current,
+            "image": image.asset -> url
+        }
+    `
+  );
+};
+
+//get featured medication
+export const getFeaturedMedications = () => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == 'medication' && featured == true ] | order(_createdAt desc) [0...3] {
+          name,
+            "slug": slug.current,
+            "image": image.asset -> url
+        }
     `
   );
 };

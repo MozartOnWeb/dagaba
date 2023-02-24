@@ -22,6 +22,12 @@ export const Medication: SchemaTypeDefinition = {
       },
     },
     {
+      name: "featured",
+      type: "boolean",
+      title: "Featured",
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "image",
       type: "image",
       title: "Image",

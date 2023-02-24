@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import { getSingleCategory, getCategoryMedications } from "@/sanity/fetch";
 import styles from "./styles.module.css";
 import { ProductItem } from "@/components/productItem/ProductItem";
@@ -15,7 +16,7 @@ const getCurrentCategory = async (category: string) => {
   return currentCategory;
 };
 
-export async function generateMetadata({ params }: Route) {
+export async function generateMetadata({ params }: Route): Promise<Metadata> {
   const category = await getCurrentCategory(params.category);
 
   console.log(category.description);
@@ -53,7 +54,13 @@ export default async function Category({ params: { category } }: Route) {
       {/* CATEGORIES SECTION */}
       <section className={styles.categories}>
         <h4>Médicaments</h4>
-        <div className={styles.productContainer}>
+        <div
+          className={
+            medications.length <= 3
+              ? styles.productContainer2
+              : styles.productContainer
+          }
+        >
           {medications.map((item, index) => (
             <ProductItem
               image={item.image}
