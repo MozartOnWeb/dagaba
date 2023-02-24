@@ -25,12 +25,8 @@ export const getSingleCategory = ({ category }: { category: string }) => {
   );
 };
 
-//get single category medications
-export const getSingleCategoryMedications = ({
-  category,
-}: {
-  category: string;
-}) => {
+//get category medications
+export const getCategoryMedications = ({ category }: { category: string }) => {
   return sanityClient.fetch(
     groq`
         *[_type=="medication" && references(*[_type=="category" && slug.current == $category]._id)] {
@@ -43,6 +39,23 @@ export const getSingleCategoryMedications = ({
   );
 };
 
-// *[references("151dc744-7efe-431f-a38f-a7bfb8541d45")] {
-//   categories[] ->
-// }
+//get medication
+export const getMedication = ({ medication }: { medication: string }) => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == "medication" && slug.current == $medication && !(_id in path("drafts.**"))][0] {
+            name,
+            composition,
+            posologie,
+            presentation,
+            description,
+            "image": image.asset -> url,
+            categories[] -> {
+                "slug": slug.current,
+                name
+            }
+        }
+    `,
+    { medication }
+  );
+};

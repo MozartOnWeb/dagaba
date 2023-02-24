@@ -25,7 +25,7 @@ export const ProductItem = ({ href, name, image }: Props) => {
               width={500}
               height={500}
               src={image ? image : Product}
-              alt="product image"
+              alt={`${name} image`}
             />
           </div>
         </div>

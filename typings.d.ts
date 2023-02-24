@@ -1,6 +1,7 @@
 type Route = {
   params: {
     category: string;
+    medication: string;
   };
 };
 
@@ -39,6 +40,8 @@ interface Medication extends Base {
   name: string;
   description: Description[];
   posologie: string;
+  composition: string;
   presentation: string;
+  categories: Category[];
   slug: string;
 }

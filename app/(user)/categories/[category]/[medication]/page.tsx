@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { PortableText } from "@portabletext/react";
+
+import { getMedication } from "@/sanity/fetch";
+
 import ScrollUp from "@/lib/ScrollUp";
 
 import styles from "./styles.module.css";
@@ -11,23 +15,6 @@ export const metadata = {
   title: "Desma Tisane",
   description: "Ce qu'il faut savoir sur DAGABA",
 };
-
-const productInfos = [
-  {
-    headline: "Composition",
-    content:
-      "100% Extrait des plantes naturelles et leurs racines médicinales.",
-  },
-  {
-    headline: "Posologie",
-    content:
-      "Prendre un sachet unidose « fois par jour après avoir bien mangé Matin, Midi et Soir avant 17 heures",
-  },
-  {
-    headline: "présentation",
-    content: "21 Sachets unidose de 10grs.",
-  },
-];
 
 const categories = [
   {
@@ -44,38 +31,48 @@ const categories = [
   },
 ];
 
-export default function Product() {
+export default async function Product({ params: { medication } }: Route) {
+  const singleMedication: Medication = await getMedication({ medication });
+
   return (
     <main>
       <ScrollUp />
       <section className={styles.main}>
         <section className={styles.imageWrapper}>
-          <Image src={ProductImage} alt={`product image`} />
+          <Image
+            width={700}
+            height={700}
+            src={singleMedication.image}
+            alt={`${singleMedication.name} image`}
+          />
         </section>
 
         <section className={styles.infosWrapper}>
           <div className={styles.infosHeader}>
-            <h2>Desma Tisane</h2>
-            <p>
-              Contre les Inflammations broncho pulmonaire, Toux Chronique,
-              Asthme, Essoufflement, Gène Respiratoire.
-            </p>
+            <h2>{singleMedication.name}</h2>
+            <PortableText value={singleMedication.description} />
           </div>
 
           <div className={styles.singleInfosContainer}>
-            {productInfos.map((product) => (
-              <div key={product.headline}>
-                <h4>{product.headline}</h4>
-                <p>{product.content}</p>
-              </div>
-            ))}
+            <div>
+              <h4>Composition</h4>
+              <p>{singleMedication.composition}</p>
+            </div>
+            <div>
+              <h4>Posologie</h4>
+              <p>{singleMedication.posologie}</p>
+            </div>
+            <div>
+              <h4>Présentation</h4>
+              <p>{singleMedication.presentation}</p>
+            </div>
           </div>
 
           <div className={styles.categoriesWrapper}>
             <h4>Catégories</h4>
             <div>
-              {categories.map((category) => (
-                <Link key={category.name} href={`/categories/${category.name}`}>
+              {singleMedication.categories.map((category) => (
+                <Link key={category.slug} href={`/categories/${category.name}`}>
                   {category.name}
                 </Link>
               ))}

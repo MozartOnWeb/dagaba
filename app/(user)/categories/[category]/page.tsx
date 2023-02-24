@@ -1,9 +1,6 @@
 import Image from "next/image";
 
-import {
-  getSingleCategory,
-  getSingleCategoryMedications,
-} from "@/sanity/fetch";
+import { getSingleCategory, getCategoryMedications } from "@/sanity/fetch";
 
 import styles from "./styles.module.css";
 
@@ -16,38 +13,11 @@ export const metadata = {
   description: "Maladies des organes interne",
 };
 
-const DummyLinks = [
-  {
-    href: "1",
-  },
-  {
-    href: "2",
-  },
-  {
-    href: "3",
-  },
-  {
-    href: "4",
-  },
-  {
-    href: "5",
-  },
-  {
-    href: "6",
-  },
-  {
-    href: "7",
-  },
-  {
-    href: "8",
-  },
-];
-
 export const revalidate = 1200;
 
 export default async function Category({ params: { category } }: Route) {
   const singleCategory: Category = await getSingleCategory({ category });
-  const medications: Medication[] = await getSingleCategoryMedications({
+  const medications: Medication[] = await getCategoryMedications({
     category,
   });
 
