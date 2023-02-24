@@ -32,13 +32,8 @@ export const Medication: SchemaTypeDefinition = {
     },
     {
       name: "description",
-      type: "array",
+      type: "string",
       title: "Description",
-      of: [
-        {
-          type: "block",
-        },
-      ],
       validation: (Rule: Rule) => Rule.required(),
     },
     {

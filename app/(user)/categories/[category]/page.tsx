@@ -4,10 +4,29 @@ import styles from "./styles.module.css";
 import { ProductItem } from "@/components/productItem/ProductItem";
 import HeroImage from "@/public/images/1.jpg";
 
-export const metadata = {
-  title: "Catégorie",
-  description: "Maladies des organes interne",
+// export const metadata = {
+//   title: "Catégorie",
+//   description: "Maladies des organes interne",
+// };
+
+const getCurrentCategory = async (category: string) => {
+  const currentCategory: Category = await getSingleCategory({ category });
+
+  return currentCategory;
 };
+
+export async function generateMetadata({ params }: Route) {
+  const category = await getCurrentCategory(params.category);
+
+  console.log(category.description);
+
+  const { name, description } = category;
+
+  return {
+    title: name,
+    description,
+  };
+}
 
 export const revalidate = 1200;
 

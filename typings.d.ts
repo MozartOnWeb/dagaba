@@ -38,7 +38,7 @@ interface Category extends Base {
 interface Medication extends Base {
   image: string;
   name: string;
-  description: Description[];
+  description: string;
   posologie: string;
   composition: string;
   presentation: string;
