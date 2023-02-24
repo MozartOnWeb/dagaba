@@ -19,8 +19,6 @@ const getCurrentCategory = async (category: string) => {
 export async function generateMetadata({ params }: Route): Promise<Metadata> {
   const category = await getCurrentCategory(params.category);
 
-  console.log(category.description);
-
   const { name, description } = category;
 
   return {

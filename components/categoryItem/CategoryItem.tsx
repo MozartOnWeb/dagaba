@@ -16,7 +16,7 @@ export const CategoryItem = ({ href, name }: Props) => {
       <Link href={href}>
         <div className={styles.container}>
           <div>
-            <Image src={Product} alt="product image" />
+            <Image width={700} height={700} src={Product} alt="product image" />
           </div>
         </div>
         <p>{name}</p>

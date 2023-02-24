@@ -5,21 +5,6 @@ import { getRecentMedications, getFeaturedMedications } from "@/sanity/fetch";
 
 import styles from "./styles.module.css";
 
-const DummyLinks = [
-  {
-    href: "1",
-  },
-  {
-    href: "2",
-  },
-  {
-    href: "3",
-  },
-  {
-    href: "4",
-  },
-];
-
 export default async function Layout({
   children,
 }: {
@@ -52,23 +37,27 @@ export default async function Layout({
         </div>
 
         {/* FEATURED PRODUCT */}
-        <h4 className={styles.secondH4}>Produits phares</h4>
-        <div
-          className={
-            featuredMedications.length <= 3
-              ? styles.productContainer2
-              : styles.productContainer
-          }
-        >
-          {featuredMedications.map((item) => (
-            <ProductItem
-              name={item.name}
-              image={item.image}
-              href={item.slug}
-              key={item.name}
-            />
-          ))}
-        </div>
+        {featuredMedications.length > 0 && (
+          <>
+            <h4 className={styles.secondH4}>Produits phares</h4>
+            <div
+              className={
+                featuredMedications.length <= 3
+                  ? styles.productContainer2
+                  : styles.productContainer
+              }
+            >
+              {featuredMedications.map((item) => (
+                <ProductItem
+                  name={item.name}
+                  image={item.image}
+                  href={item.slug}
+                  key={item.name}
+                />
+              ))}
+            </div>
+          </>
+        )}
 
         {/* USEFUL FACT*/}
         <UsefulFact />

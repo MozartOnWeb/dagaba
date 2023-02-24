@@ -35,6 +35,7 @@ export default async function Product({ params }: Route) {
         <section className={styles.imageWrapper}>
           <div>
             <Image
+              priority={true}
               width={700}
               height={700}
               src={medication.image}
