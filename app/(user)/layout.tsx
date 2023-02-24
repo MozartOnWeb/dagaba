@@ -10,6 +10,7 @@ export const metadata = {
     default: "DAGABA",
     template: "%s | DAGABA",
   },
+  keywords: ["Dagaba", "APROPHAM", "Mouleikafou"],
   robots: {
     index: true,
     follow: true,

@@ -1,35 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-
 import { PortableText } from "@portabletext/react";
 
 import { getMedication } from "@/sanity/fetch";
 
 import ScrollUp from "@/lib/ScrollUp";
-
 import styles from "./styles.module.css";
-
 import ProductImage from "@/public/images/1.jpg";
-
-export const metadata = {
-  title: "Desma Tisane",
-  description: "Ce qu'il faut savoir sur DAGABA",
-};
-
-const categories = [
-  {
-    name: "Maladies Pulmonaires",
-  },
-  {
-    name: "Paludisme",
-  },
-  {
-    name: "Gastro",
-  },
-  {
-    name: "Organes Internes",
-  },
-];
 
 export default async function Product({ params: { medication } }: Route) {
   const singleMedication: Medication = await getMedication({ medication });
@@ -72,7 +49,7 @@ export default async function Product({ params: { medication } }: Route) {
             <h4>Catégories</h4>
             <div>
               {singleMedication.categories.map((category) => (
-                <Link key={category.slug} href={`/categories/${category.name}`}>
+                <Link key={category.slug} href={`/categories/${category.slug}`}>
                   {category.name}
                 </Link>
               ))}

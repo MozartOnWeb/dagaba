@@ -1,11 +1,7 @@
 import Image from "next/image";
-
 import { getSingleCategory, getCategoryMedications } from "@/sanity/fetch";
-
 import styles from "./styles.module.css";
-
 import { ProductItem } from "@/components/productItem/ProductItem";
-
 import HeroImage from "@/public/images/1.jpg";
 
 export const metadata = {
