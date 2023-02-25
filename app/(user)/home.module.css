@@ -284,11 +284,18 @@
 }
 
 .productContainer {
-  margin-bottom: 2em;
   display: flex;
+  gap: 2em 3em;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+}
+
+.productContainer2 {
+  display: flex;
+  gap: 2em 10em;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .seeMoreBtn {
@@ -447,6 +454,23 @@
 
   .bestCategories h4 {
     margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 579px) {
+  .productContainer {
+    display: flex;
+    gap: 2em 0em;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .productContainer2 {
+    display: flex;
+    gap: 2em 0em;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
 

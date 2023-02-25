@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getRecentMedications, getFeaturedMedications } from "@/sanity/fetch";
+
 import CustomVideo from "@/components/customVideo/CustomVideo";
 import Faqs from "@/components/faq/Faqs";
 import { ProductItem } from "@/components/productItem/ProductItem";
@@ -77,7 +79,9 @@ const howWeHelp = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const featuredMedications: Medication[] = await getFeaturedMedications();
+
   return (
     <main>
       <main className={styles.main}>
@@ -186,23 +190,35 @@ export default function Home() {
       </section>
 
       {/* BEST CATEGORIES WRAPPER */}
-      <section className={styles.bestCategories}>
-        <h4>Produits phares</h4>
-        <div className={styles.productContainer}>
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-          <ProductItem />
-        </div>
-
-        <Link className={styles.seeMoreBtn} href={"/categories"}>
-          <p>en voir plus</p>
-          <div>
-            <SeeMoreArrowIcon />
-          </div>
-        </Link>
-      </section>
+      {featuredMedications.length > 0 && (
+        <>
+          <section className={styles.bestCategories}>
+            <h4>Produits phares</h4>
+            <div
+              className={
+                featuredMedications.length <= 3
+                  ? styles.productContainer2
+                  : styles.productContainer
+              }
+            >
+              {featuredMedications.map((item) => (
+                <ProductItem
+                  name={item.name}
+                  image={item.image}
+                  href={item.slug}
+                  key={item.name}
+                />
+              ))}
+            </div>
+            <Link className={styles.seeMoreBtn} href={"/categories"}>
+              <p>en voir plus</p>
+              <div>
+                <SeeMoreArrowIcon />
+              </div>
+            </Link>
+          </section>
+        </>
+      )}
 
       {/* BEST CATEGORIES WRAPPER */}
 
