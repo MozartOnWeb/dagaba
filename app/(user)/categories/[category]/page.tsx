@@ -1,44 +1,40 @@
 import Image from "next/image";
-
+import { Metadata } from "next";
+import { getSingleCategory, getCategoryMedications } from "@/sanity/fetch";
 import styles from "./styles.module.css";
-
 import { ProductItem } from "@/components/productItem/ProductItem";
-
 import HeroImage from "@/public/images/1.jpg";
 
-export const metadata = {
-  title: "Catégorie",
-  description: "Maladies des organes interne",
+// export const metadata = {
+//   title: "Catégorie",
+//   description: "Maladies des organes interne",
+// };
+
+const getCurrentCategory = async (category: string) => {
+  const currentCategory: Category = await getSingleCategory({ category });
+
+  return currentCategory;
 };
 
-const DummyLinks = [
-  {
-    href: "1",
-  },
-  {
-    href: "2",
-  },
-  {
-    href: "3",
-  },
-  {
-    href: "4",
-  },
-  {
-    href: "5",
-  },
-  {
-    href: "6",
-  },
-  {
-    href: "7",
-  },
-  {
-    href: "8",
-  },
-];
+export async function generateMetadata({ params }: Route): Promise<Metadata> {
+  const category = await getCurrentCategory(params.category);
 
-export default function Category() {
+  const { name, description } = category;
+
+  return {
+    title: name,
+    description,
+  };
+}
+
+export const revalidate = 1200;
+
+export default async function Category({ params: { category } }: Route) {
+  const singleCategory: Category = await getSingleCategory({ category });
+  const medications: Medication[] = await getCategoryMedications({
+    category,
+  });
+
   return (
     <main className={styles.main}>
       {/* HERO SECTION */}
@@ -46,22 +42,30 @@ export default function Category() {
         <div>
           <Image priority={true} src={HeroImage} alt="category image" />
         </div>
-        <h3>Maladies des organes internes.</h3>
-        <span className={styles.numberOfStock}>+350 remèdes</span>
-        <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
-        </p>
+        <h3>{singleCategory.name}</h3>
+        <span className={styles.numberOfStock}>
+          +{singleCategory.number_of_stock} remèdes
+        </span>
+        <p>{singleCategory.description}</p>
       </section>
 
       {/* CATEGORIES SECTION */}
       <section className={styles.categories}>
         <h4>Médicaments</h4>
-        <div className={styles.productContainer}>
-          {DummyLinks.map((item, index) => (
-            <ProductItem key={index} />
+        <div
+          className={
+            medications.length <= 3
+              ? styles.productContainer2
+              : styles.productContainer
+          }
+        >
+          {medications.map((item, index) => (
+            <ProductItem
+              image={item.image}
+              name={item.name}
+              href={item.slug}
+              key={index}
+            />
           ))}
         </div>
       </section>

@@ -26,10 +26,19 @@
   align-items: center;
 }
 
-.imageWrapper img {
-  width: 97%;
+.imageWrapper div {
   height: 97%;
-  object-fit: cover;
+  width: 97%;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
 }
 
 /* INFOS WRAPPER */
@@ -152,9 +161,13 @@
   .imageWrapper {
     height: 25em;
   }
-  .imageWrapper img {
+  .imageWrapper div {
     height: 96%;
     width: 98%;
+  }
+  .imageWrapper img {
+    height: 80%;
+    width: 80%;
   }
 }
 

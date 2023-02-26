@@ -193,10 +193,8 @@
 
 /* COMMENT ON VOUS AIDE */
 .howWeHelpWrapper {
-  width: 100vw;
   margin-top: 8em;
   margin-bottom: 8em;
-  margin-left: -5em;
   height: 40em;
 
   background-color: var(--yellow);
@@ -286,11 +284,18 @@
 }
 
 .productContainer {
-  margin-bottom: 2em;
   display: flex;
+  gap: 2em 3em;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  width: 100%;
+}
+
+.productContainer2 {
+  display: flex;
+  gap: 2em 10em;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .seeMoreBtn {
@@ -443,7 +448,6 @@
     width: 100%;
   }
   .howWeHelpWrapper {
-    margin-left: -5em;
     margin-top: 5em;
     margin-bottom: 5em;
   }
@@ -453,12 +457,26 @@
   }
 }
 
+@media screen and (max-width: 579px) {
+  .productContainer {
+    display: flex;
+    gap: 2em 0em;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .productContainer2 {
+    display: flex;
+    gap: 2em 0em;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (max-width: 420px) {
   .main {
     margin-top: 0em;
-  }
-  .howWeHelpWrapper {
-    margin-left: -2em;
   }
 }
 

@@ -22,6 +22,12 @@ export const Medication: SchemaTypeDefinition = {
       },
     },
     {
+      name: "featured",
+      type: "boolean",
+      title: "Featured",
+      validation: (Rule: Rule) => Rule.required(),
+    },
+    {
       name: "image",
       type: "image",
       title: "Image",
@@ -32,13 +38,8 @@ export const Medication: SchemaTypeDefinition = {
     },
     {
       name: "description",
-      type: "array",
+      type: "string",
       title: "Description",
-      of: [
-        {
-          type: "block",
-        },
-      ],
       validation: (Rule: Rule) => Rule.required(),
     },
     {
@@ -61,10 +62,10 @@ export const Medication: SchemaTypeDefinition = {
     },
     {
       name: "categories",
-      type: "array",
       title: "Categories",
+      type: "array",
       of: [{ type: "reference", to: { type: "category" } }],
-      validation: (Rule: Rule) => Rule.unique(),
+      // validation: (Rule: Rule) => Rule.unique(),
     },
   ],
 };

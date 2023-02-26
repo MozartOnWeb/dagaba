@@ -41,11 +41,5 @@ export const Category: SchemaTypeDefinition = {
       title: "Description",
       validation: (Rule: Rule) => Rule.required(),
     },
-    {
-      name: "medications",
-      type: "array",
-      title: "Medications",
-      of: [{ type: "reference", to: { type: "medication" } }],
-    },
   ],
 };

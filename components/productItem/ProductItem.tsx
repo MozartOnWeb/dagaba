@@ -5,7 +5,13 @@ import styles from "./styles.module.css";
 
 import Product from "@/public/images/package.png";
 
-export const ProductItem = ({ href }: { href?: string }) => {
+type Props = {
+  href: string;
+  name: string;
+  image: string;
+};
+
+export const ProductItem = ({ href, name, image }: Props) => {
   return (
     <div className={styles.wrapper}>
       <Link
@@ -15,10 +21,15 @@ export const ProductItem = ({ href }: { href?: string }) => {
       >
         <div className={styles.container}>
           <div>
-            <Image src={Product} alt="product image" />
+            <Image
+              width={500}
+              height={500}
+              src={image ? image : Product}
+              alt={`${name} image`}
+            />
           </div>
         </div>
-        <p>HEPA GELLULES</p>
+        <p>{name}</p>
       </Link>
     </div>
   );
