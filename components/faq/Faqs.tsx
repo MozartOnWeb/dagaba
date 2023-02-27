@@ -9,7 +9,7 @@ import { ExpandArrowIcon, CloseArrowIcon } from "@/public/assets/icons";
 const faqsArray = [
   {
     id: 0,
-    headline: "Qu'est ce que APROPHAM ?",
+    headline: "Qu'est ce que Dagaba ?",
     content:
       "In fermentum posuere urna nec tincidunt praesent. Netus et malesuada fames ac turpis egestas. Orci sagittis eu volutpat odio facilisis. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Leo duis ut diam quam nulla porttitor massa id.",
   },

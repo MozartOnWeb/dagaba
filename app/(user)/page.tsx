@@ -87,13 +87,13 @@ export default async function Home() {
       <main className={styles.main}>
         <section>
           <h1>
-            APROPHAM, <br /> la nature aux bons soins des humains
+            DAGABA, <br /> la nature aux bons soins des humains
             <span>.</span>
           </h1>
           <p>
-            Créer en 1994, APROPHAM produit des médicaments à base de plantes à
-            100%. Toute la chaîne de production est gérée par APROPHAM de la
-            récolte des plantes à l&apos;emballage du médicament finals
+            Créer en 1994, APROPHAM DAGABA produit des médicaments à base de
+            plantes à 100%. Toute la chaîne de production est gérée par APROPHAM
+            de la récolte des plantes à l&apos;emballage du médicament finals
             <span>.</span>
           </p>
           <div className={styles.socialWrapper}>
@@ -168,7 +168,7 @@ export default async function Home() {
         </div>
 
         <div className={styles.helpWrapper}>
-          <h4>Comment dagaba aide les patients ?</h4>
+          <h4>Comment Dagaba aide les patients ?</h4>
           <p>
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat

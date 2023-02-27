@@ -7,7 +7,7 @@ const usefulData = [
       "Il est bien connu que dans la plupart des cas ce sont les personnes âgées qui souffrent de dysfonctionnement  érectile. La majorité des gens pensent que c’est le vieillissement qui provoque ce désordre.",
   },
   {
-    headline: "Les infections urinaires ",
+    headline: "Les infections urinaires",
     content:
       "Une infection urinaire est une infection qui peut toucher une ou plusieurs parties du système urinaire : les reins, les uretères, la vessie et l’urètre. Elle se manifeste le plus souvent par des douleurs.",
   },
@@ -37,7 +37,10 @@ export const UsefulFact = () => {
       <div className={styles.infosWrapper}>
         {usefulData.map((info, index) => (
           <div key={index}>
-            <h6>{info.headline}</h6>
+            <h6>
+              {info.headline}
+              <span>.</span>
+            </h6>
             <p>{info.content}</p>
             <button>en savoir plus</button>
           </div>

@@ -61,7 +61,7 @@ export default function About() {
         {/* CREATION SECTION */}
         <div className={styles.bioCreation}>
           <div className={styles.left}>
-            <h4>Création de APROPHAM.</h4>
+            <h4>Création de DAGABA.</h4>
           </div>
 
           <div className={styles.right}>
