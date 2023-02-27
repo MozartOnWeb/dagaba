@@ -1,4 +1,10 @@
+"use client";
+
 import styles from "./styles.module.css";
+
+import { useModal } from "@/stores/ModalStore";
+
+import Modal from "../Modal/Modal";
 
 const usefulData = [
   {
@@ -24,6 +30,9 @@ const usefulData = [
 ];
 
 export const UsefulFact = () => {
+  const isOpen = useModal((state) => state.isOpen);
+  const openModal = useModal((state) => state.openModal);
+
   return (
     <section className={styles.main}>
       <div className={styles.header}>
@@ -41,11 +50,12 @@ export const UsefulFact = () => {
               {info.headline}
               <span>.</span>
             </h6>
-            <p>{info.content}</p>
-            <button>en savoir plus</button>
+            <p className={styles.intro}>{info.content}</p>
+            <button onClick={() => openModal()}>en savoir plus</button>
           </div>
         ))}
       </div>
+      {isOpen && <Modal />}
     </section>
   );
 };

@@ -6,7 +6,7 @@ type ModalProps = {
   closeModal: () => void;
 };
 
-const useModal = create<ModalProps>((set) => ({
+export const useModal = create<ModalProps>((set) => ({
   isOpen: false,
   openModal: () => set({ isOpen: true }),
   closeModal: () => set({ isOpen: false }),
