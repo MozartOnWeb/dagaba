@@ -70,17 +70,23 @@ const Footer = () => {
         <div className={styles.socialWrapper}>
           <div>
             <Link href={"https://facebook.com"}>
-              <FacebookIcon invert />
+              <div>
+                <FacebookIcon invert />
+              </div>
             </Link>
           </div>
           <div>
             <Link href={"https://tiktok.com"}>
-              <TikTokIcon invert />
+              <div>
+                <TikTokIcon invert />
+              </div>
             </Link>
           </div>
           <div>
             <Link href={"https://youtube.com"}>
-              <YouTubeIcon invert />
+              <div>
+                <YouTubeIcon invert />
+              </div>
             </Link>
           </div>
         </div>

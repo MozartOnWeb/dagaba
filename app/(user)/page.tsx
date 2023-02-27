@@ -103,7 +103,9 @@ export default async function Home() {
                 <div key={social.name}>
                   <div>
                     <Link target={"_blank"} href={social.link}>
-                      <social.Icon />
+                      <div>
+                        <social.Icon />
+                      </div>
                     </Link>
                   </div>
                 </div>
