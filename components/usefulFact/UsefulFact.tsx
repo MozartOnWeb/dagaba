@@ -32,24 +32,22 @@ const usefulData = [
 ];
 
 export const UsefulFact = () => {
-  const [content, setContent] = useState([]);
+  const [content, setContent] = useState({
+    headline: "",
+    content: "",
+  });
 
   const isOpen = useModal((state) => state.isOpen);
   const openModal = useModal((state) => state.openModal);
 
-  function preventScroll(event: Event) {
-    event.preventDefault();
-  }
-
-  const openModalHandler = () => {
+  const setModalContent = (headline: string, content: string) => {
     openModal();
-    document.body.addEventListener("touchmove", preventScroll, {
-      passive: false,
-    });
-    document.body.addEventListener("wheel", preventScroll, {
-      passive: false,
-    });
+    setContent({ headline: headline, content: content });
   };
+
+  isOpen
+    ? document.body.classList.add("active-modal")
+    : document.body.classList.remove("active-modal");
 
   return (
     <section className={styles.main}>
@@ -69,11 +67,17 @@ export const UsefulFact = () => {
               <span>.</span>
             </h6>
             <p className={styles.intro}>{info.content}</p>
-            <button onClick={() => openModalHandler()}>en savoir plus</button>
+            <button
+              onClick={() => setModalContent(info.headline, info.content)}
+            >
+              en savoir plus
+            </button>
           </div>
         ))}
       </div>
-      {isOpen && <Modal />}
+      {isOpen && (
+        <Modal headline={content.headline} content={content.content} />
+      )}
     </section>
   );
 };

@@ -9,34 +9,26 @@ type Props = {
   content: string;
 };
 
-const Modal = () => {
+const Modal = ({ content, headline }: Props) => {
   const closeModal = useModal((state) => state.closeModal);
 
-  function preventScroll(event: Event) {
-    event.preventDefault();
-  }
-
-  const closeModalHandler = () => {
-    closeModal();
-    document.body.removeEventListener("touchmove", preventScroll);
-    document.body.removeEventListener("wheel", preventScroll);
-  };
-
   return (
-    <main className={styles.main}>
-      <section className={styles.contentWrapper}>
+    <main onClick={() => closeModal()} className={styles.main}>
+      <section
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className={styles.contentWrapper}
+      >
         <header>
-          <h6>Maladies des organes internes</h6>
-          <CloseIcon onClick={() => closeModalHandler()} />
+          <h6>
+            {headline}
+            <span>.</span>
+          </h6>
+          <CloseIcon onClick={() => closeModal()} />
         </header>
         <div className={styles.paragraphContainer}>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque odio
-            cumque mollitia, deserunt dolorem nemo magnam beatae quos quasi
-            necessitatibus? Incidunt ea sunt tempore odio nulla unde accusantium
-            quo alias, harum veniam iste omnis, reprehenderit suscipit est culpa
-            commodi hic.
-          </p>
+          <p>{content}</p>
         </div>
       </section>
     </main>

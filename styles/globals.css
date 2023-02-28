@@ -15,7 +15,6 @@ html {
   font-size: 62.5%;
   font-family: var(--montserrat);
   box-sizing: border-box;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -23,6 +22,9 @@ body {
   background-color: var(--green);
   color: var(--white);
   margin: 0;
+}
+body.active-modal {
+  overflow-y: hidden;
 }
 
 .wrapper {
