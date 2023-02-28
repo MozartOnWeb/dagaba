@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useEffect, ReactEventHandler } from "react";
+
 import styles from "./styles.module.css";
 
 import { useModal } from "@/stores/ModalStore";
@@ -30,8 +32,24 @@ const usefulData = [
 ];
 
 export const UsefulFact = () => {
+  const [content, setContent] = useState([]);
+
   const isOpen = useModal((state) => state.isOpen);
   const openModal = useModal((state) => state.openModal);
+
+  function preventScroll(event: Event) {
+    event.preventDefault();
+  }
+
+  const openModalHandler = () => {
+    openModal();
+    document.body.addEventListener("touchmove", preventScroll, {
+      passive: false,
+    });
+    document.body.addEventListener("wheel", preventScroll, {
+      passive: false,
+    });
+  };
 
   return (
     <section className={styles.main}>
@@ -51,7 +69,7 @@ export const UsefulFact = () => {
               <span>.</span>
             </h6>
             <p className={styles.intro}>{info.content}</p>
-            <button onClick={() => openModal()}>en savoir plus</button>
+            <button onClick={() => openModalHandler()}>en savoir plus</button>
           </div>
         ))}
       </div>
