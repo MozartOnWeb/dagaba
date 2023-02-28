@@ -1,12 +1,13 @@
 import styles from "./styles.module.css";
 
-import { useModal } from "@/stores/ModalStore";
+import { PortableText } from "@portabletext/react";
 
+import { useModal } from "@/stores/ModalStore";
 import { CloseIcon } from "@/public/assets/icons";
 
 type Props = {
   headline: string;
-  content: string;
+  content: [];
 };
 
 const Modal = ({ content, headline }: Props) => {
@@ -28,7 +29,7 @@ const Modal = ({ content, headline }: Props) => {
           <CloseIcon onClick={() => closeModal()} />
         </header>
         <div className={styles.paragraphContainer}>
-          <p>{content}</p>
+          <PortableText value={content} />
         </div>
       </section>
     </main>

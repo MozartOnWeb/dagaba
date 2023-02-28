@@ -92,7 +92,8 @@ export const getHelpfulInfos = () => {
     groq`
         *[_type == "Helpful_Infos" && !(_id in path("drafts.**"))] {
             headline,
-            content
+            introduction,
+            content,
         }
     `
   );

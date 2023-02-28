@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, ReactEventHandler } from "react";
+import { useState } from "react";
 
 import styles from "./styles.module.css";
 
@@ -31,16 +31,25 @@ const usefulData = [
   },
 ];
 
-export const UsefulFact = () => {
-  const [content, setContent] = useState({
+type ContentProps = {
+  headline: string;
+  content: [];
+};
+
+export const UsefulFact = ({
+  helpfulInfos,
+}: {
+  helpfulInfos: HelpfulInfo[];
+}) => {
+  const [content, setContent] = useState<ContentProps>({
     headline: "",
-    content: "",
+    content: [],
   });
 
   const isOpen = useModal((state) => state.isOpen);
   const openModal = useModal((state) => state.openModal);
 
-  const setModalContent = (headline: string, content: string) => {
+  const setModalContent = (headline: string, content: []) => {
     openModal();
     setContent({ headline: headline, content: content });
   };
@@ -60,13 +69,13 @@ export const UsefulFact = () => {
       </div>
 
       <div className={styles.infosWrapper}>
-        {usefulData.map((info, index) => (
+        {helpfulInfos.map((info, index) => (
           <div key={index}>
             <h6>
               {info.headline}
               <span>.</span>
             </h6>
-            <p className={styles.intro}>{info.content}</p>
+            <p className={styles.intro}>{info.introduction}</p>
             <button
               onClick={() => setModalContent(info.headline, info.content)}
             >

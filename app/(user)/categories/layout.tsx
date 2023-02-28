@@ -1,7 +1,11 @@
 import { ProductItem } from "@/components/productItem/ProductItem";
 import { UsefulFact } from "@/components/usefulFact/UsefulFact";
 
-import { getRecentMedications, getFeaturedMedications } from "@/sanity/fetch";
+import {
+  getRecentMedications,
+  getFeaturedMedications,
+  getHelpfulInfos,
+} from "@/sanity/fetch";
 
 import styles from "./styles.module.css";
 
@@ -12,6 +16,7 @@ export default async function Layout({
 }) {
   const recentMedications: Medication[] = await getRecentMedications();
   const featuredMedications: Medication[] = await getFeaturedMedications();
+  const helpfulInfos: HelpfulInfo[] = await getHelpfulInfos();
 
   return (
     <section>
@@ -60,7 +65,7 @@ export default async function Layout({
         )}
 
         {/* USEFUL FACT*/}
-        <UsefulFact />
+        <UsefulFact helpfulInfos={helpfulInfos} />
       </div>
     </section>
   );

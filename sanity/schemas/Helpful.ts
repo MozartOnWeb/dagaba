@@ -13,6 +13,11 @@ export const Helpful: SchemaTypeDefinition = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
+      name: "introduction",
+      title: "Introduction",
+      type: "string",
+    },
+    {
       name: "content",
       title: "Content",
       type: "array",
