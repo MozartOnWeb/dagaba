@@ -8,23 +8,14 @@ export const Helpful: SchemaTypeDefinition = {
   fields: [
     {
       name: "headline",
-      type: "string",
       title: "Headline",
+      type: "string",
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "slug",
-      type: "slug",
-      title: "Slug",
-      options: {
-        source: "name",
-        maxLength: 50,
-      },
-    },
-    {
       name: "content",
-      type: "array",
       title: "Content",
+      type: "array",
       of: [
         {
           type: "block",

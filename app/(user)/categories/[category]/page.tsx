@@ -5,11 +5,6 @@ import styles from "./styles.module.css";
 import { ProductItem } from "@/components/productItem/ProductItem";
 import HeroImage from "@/public/images/1.jpg";
 
-// export const metadata = {
-//   title: "Catégorie",
-//   description: "Maladies des organes interne",
-// };
-
 const getCurrentCategory = async (category: string) => {
   const currentCategory: Category = await getSingleCategory({ category });
 

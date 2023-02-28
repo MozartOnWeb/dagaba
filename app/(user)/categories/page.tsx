@@ -24,6 +24,8 @@ export default async function Categories() {
       <section className={styles.hero}>
         <div>
           <Image
+            width={700}
+            height={700}
             priority={true}
             src={HeroImage}
             alt="dagaba catégories image"
