@@ -49,5 +49,5 @@ interface Medication extends Base {
 interface HelpfulInfo extends Base {
   headline: string;
   introduction: string;
-  content: any;
+  content: [];
 }

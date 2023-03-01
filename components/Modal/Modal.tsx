@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 
 import { useModal } from "@/stores/ModalStore";
 import { CloseIcon } from "@/public/assets/icons";
+import { RichTextComponents } from "../richTextComponents/RichTextComponents";
 
 type Props = {
   headline: string;
@@ -29,7 +30,7 @@ const Modal = ({ content, headline }: Props) => {
           <CloseIcon onClick={() => closeModal()} />
         </header>
         <div className={styles.paragraphContainer}>
-          <PortableText value={content} />
+          <PortableText value={content} components={RichTextComponents} />
         </div>
       </section>
     </main>
