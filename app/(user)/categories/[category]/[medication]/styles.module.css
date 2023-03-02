@@ -6,7 +6,7 @@
 
 .main p {
   font-family: var(--montserrat);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .main h4,
@@ -95,7 +95,7 @@
 .categoriesWrapper > div a {
   color: var(--yellow);
   font-family: var(--clashDisplay);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
 /* SEPARATOR */
