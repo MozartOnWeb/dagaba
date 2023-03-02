@@ -20,7 +20,7 @@
   justify-content: center;
 }
 
-.container svg {
+.container > svg {
   cursor: pointer;
   width: 3.5em;
   height: 3.5em;
@@ -33,18 +33,75 @@
   margin-top: 10em;
   display: flex;
   flex-direction: column;
-  gap: 3em 0em;
+  gap: 4em 0em;
 }
 
 .linksContainer a {
   text-decoration: none;
   font-family: var(--montserrat);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: var(--white);
   text-transform: capitalize;
 }
 
-.main a.active {
+.main .linksContainer a.active {
   text-decoration: underline;
   color: var(--yellow);
+}
+
+/* CONTACT CONTAINER */
+.contactWrapper {
+  position: absolute;
+  bottom: 10em;
+}
+
+.contactWrapper div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.contactWrapper div p {
+  font-family: var(--montserrat);
+  font-size: 1.2rem;
+}
+
+/* SOCIAL CONTAINER */
+.socialWrapper {
+  position: absolute;
+  bottom: 0em;
+  width: 100%;
+}
+
+.socialContainer {
+  display: flex;
+  gap: 0em 1em;
+  margin: 1.5em auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--yellow);
+}
+
+.singleSocial {
+  display: flex;
+  width: 5em;
+  height: 5em;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--yellow);
+}
+.singleSocial > div {
+  width: 70%;
+  height: 70%;
+  background-color: var(--green);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
