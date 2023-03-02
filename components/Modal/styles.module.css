@@ -63,14 +63,20 @@
 
 @media screen and (max-width: 600px) {
   .contentWrapper {
-    width: 80%;
+    width: 85%;
+  }
+  .contentWrapper header {
+    height: 5em;
+  }
+  .contentWrapper header h6 {
+    font-size: 1.6rem;
   }
   .contentWrapper header svg {
-    width: 2.5em;
-    height: 2.5em;
+    width: 3em;
+    height: 3em;
   }
   .paragraphContainer p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: left;
   }
 }

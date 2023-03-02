@@ -35,7 +35,7 @@ export const UsefulFact = ({
     isOpen
       ? document.body.classList.add("active-modal")
       : document.body.classList.remove("active-modal");
-  }, [isOpen]);
+  });
 
   return (
     <section className={styles.main}>
