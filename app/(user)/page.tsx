@@ -119,6 +119,7 @@ export default async function Home() {
         <section className={styles.rightSection}>
           <div>
             <Image
+              placeholder="blur"
               priority={true}
               src={firstImage}
               alt="DAGABA welcome image"
