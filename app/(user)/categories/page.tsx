@@ -28,7 +28,6 @@ export default async function Categories() {
             height={700}
             priority={true}
             src={HeroImage}
-            placeholder="blur"
             alt="dagaba catégories image"
           />
         </div>
