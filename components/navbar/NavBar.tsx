@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useHamburgerStore } from "@/stores/useHamburgerStore";
 
 import { HamburgerMenu } from "../hamburgerMenu/HamburgerMenu";
 
@@ -33,29 +34,34 @@ const NavBar = () => {
     pathname = "/categories";
   }
 
-  return (
-    <nav className={styles.nav}>
-      <HamburgerMenu />
-      <div className={styles.logo}>DAGABA</div>
+  const isOpen = useHamburgerStore((state) => state.isOpen);
+  const openHamburger = useHamburgerStore((state) => state.openHamburger);
 
-      {/* hamburger */}
-      <div className={styles.hamburger}>
-        <HamburgerIcon />
-      </div>
-      {/* nav links */}
-      <div className={styles.links}>
-        {routes.map((route) => (
-          <Link
-            key={route.id}
-            className={pathname === route.path ? styles.active : ""}
-            href={route.path}
-          >
-            {route.title}
-          </Link>
-        ))}
-      </div>
-      <div className={styles.separator} />
-    </nav>
+  return (
+    <>
+      {isOpen && <HamburgerMenu />}
+      <nav className={styles.nav}>
+        <div className={styles.logo}>DAGABA</div>
+
+        {/* hamburger */}
+        <div onClick={() => openHamburger()} className={styles.hamburger}>
+          <HamburgerIcon />
+        </div>
+        {/* nav links */}
+        <div className={styles.links}>
+          {routes.map((route) => (
+            <Link
+              key={route.id}
+              className={pathname === route.path ? styles.active : ""}
+              href={route.path}
+            >
+              {route.title}
+            </Link>
+          ))}
+        </div>
+        <div className={styles.separator} />
+      </nav>
+    </>
   );
 };
 

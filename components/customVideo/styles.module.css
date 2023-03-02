@@ -27,3 +27,10 @@
   align-items: center;
   cursor: pointer;
 }
+
+@media screen and (max-width: 475px) {
+  .videoContainer {
+    height: 97%;
+    width: 97%;
+  }
+}

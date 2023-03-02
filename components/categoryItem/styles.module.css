@@ -55,11 +55,11 @@
 @media (max-width: 429px) {
   .wrapper {
     width: 100%;
-    height: 14em;
+    height: 16em;
   }
 
   .container div {
-    width: 96%;
-    height: 90%;
+    width: 97%;
+    height: 95%;
   }
 }

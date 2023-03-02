@@ -1,8 +1,6 @@
 .main {
-  background-color: var(--yellow);
-  margin: 5em 0em;
-  padding: 5em 5em;
-  color: var(--green);
+  margin: 7em 0em;
+  color: var(--white);
 }
 
 .header {
@@ -12,16 +10,19 @@
 .main h5 {
   font-family: var(--clashDisplay);
   font-size: 3.8rem;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   margin: 0;
 }
 
-.main p {
+.intro {
   font-family: var(--montserrat);
   font-size: 1.4rem;
   font-weight: 400;
-  text-align: justify;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 
 .header > p {
@@ -29,7 +30,7 @@
 }
 
 .infosWrapper {
-  margin-top: 4em;
+  margin-top: 5em;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -48,6 +49,10 @@
   margin: 0;
 }
 
+.infosWrapper > div h6 span {
+  color: var(--yellow);
+}
+
 .infosWrapper > div p {
   font-size: 1.2rem;
   font-weight: 500;
@@ -58,11 +63,11 @@
   background-color: transparent;
   border: none;
   color: var(--green);
-  font-family: var(--montserrat);
+  background-color: var(--yellow);
+  font-family: var(--clashDisplay);
   font-size: 1.2rem;
-  text-decoration: underline;
   cursor: pointer;
-  padding: 0;
+  padding: 1em 1.5em;
   margin: 0;
 }
 
@@ -106,5 +111,11 @@
     text-align: center;
     font-weight: 500;
     margin: 5px 0 1em 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .main {
+    margin: 4em 0em;
   }
 }

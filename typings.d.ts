@@ -46,3 +46,8 @@ interface Medication extends Base {
   categories: Category[];
   slug: string;
 }
+interface HelpfulInfo extends Base {
+  headline: string;
+  introduction: string;
+  content: [];
+}

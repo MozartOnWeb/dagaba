@@ -85,3 +85,16 @@ export const getFeaturedMedications = () => {
     `
   );
 };
+
+//get featured medication
+export const getHelpfulInfos = () => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == "Helpful_Infos" && !(_id in path("drafts.**"))] {
+            headline,
+            introduction,
+            content,
+        }
+    `
+  );
+};

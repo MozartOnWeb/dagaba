@@ -1,4 +1,12 @@
+"use client";
+
+import { useState } from "react";
+
 import styles from "./styles.module.css";
+
+import { useModal } from "@/stores/ModalStore";
+
+import Modal from "../Modal/Modal";
 
 const usefulData = [
   {
@@ -7,7 +15,7 @@ const usefulData = [
       "Il est bien connu que dans la plupart des cas ce sont les personnes âgées qui souffrent de dysfonctionnement  érectile. La majorité des gens pensent que c’est le vieillissement qui provoque ce désordre.",
   },
   {
-    headline: "Les infections urinaires ",
+    headline: "Les infections urinaires",
     content:
       "Une infection urinaire est une infection qui peut toucher une ou plusieurs parties du système urinaire : les reins, les uretères, la vessie et l’urètre. Elle se manifeste le plus souvent par des douleurs.",
   },
@@ -23,7 +31,33 @@ const usefulData = [
   },
 ];
 
-export const UsefulFact = () => {
+type ContentProps = {
+  headline: string;
+  content: [];
+};
+
+export const UsefulFact = ({
+  helpfulInfos,
+}: {
+  helpfulInfos: HelpfulInfo[];
+}) => {
+  const [content, setContent] = useState<ContentProps>({
+    headline: "",
+    content: [],
+  });
+
+  const isOpen = useModal((state) => state.isOpen);
+  const openModal = useModal((state) => state.openModal);
+
+  const setModalContent = (headline: string, content: []) => {
+    openModal();
+    setContent({ headline: headline, content: content });
+  };
+
+  isOpen
+    ? document.body.classList.add("active-modal")
+    : document.body.classList.remove("active-modal");
+
   return (
     <section className={styles.main}>
       <div className={styles.header}>
@@ -35,14 +69,24 @@ export const UsefulFact = () => {
       </div>
 
       <div className={styles.infosWrapper}>
-        {usefulData.map((info, index) => (
+        {helpfulInfos.map((info, index) => (
           <div key={index}>
-            <h6>{info.headline}</h6>
-            <p>{info.content}</p>
-            <button>en savoir plus</button>
+            <h6>
+              {info.headline}
+              <span>.</span>
+            </h6>
+            <p className={styles.intro}>{info.introduction}</p>
+            <button
+              onClick={() => setModalContent(info.headline, info.content)}
+            >
+              en savoir plus
+            </button>
           </div>
         ))}
       </div>
+      {isOpen && (
+        <Modal headline={content.headline} content={content.content} />
+      )}
     </section>
   );
 };
