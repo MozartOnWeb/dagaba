@@ -79,7 +79,7 @@ const howWeHelp = [
   },
 ];
 
-export const revalidate = 7200;
+export const revalidate = 600;
 
 export default async function Home() {
   const featuredMedications: Medication[] = await getFeaturedMedications();

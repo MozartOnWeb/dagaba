@@ -1,9 +1,8 @@
+import styles from "./styles.module.css";
+
 import Image from "next/image";
 
 import { getAllCategories } from "@/sanity/fetch";
-
-import styles from "./styles.module.css";
-
 import { CategoryItem } from "@/components/categoryItem/CategoryItem";
 
 import HeroImage from "@/public/images/1.jpg";
@@ -13,7 +12,7 @@ export const metadata = {
   description: "Les catégories de produits de DAGABA",
 };
 
-export const revalidate = 7200;
+export const revalidate = 600;
 
 export default async function Categories() {
   const categories: Category[] = await getAllCategories();
@@ -28,6 +27,8 @@ export default async function Categories() {
             height={700}
             priority={true}
             src={HeroImage}
+            placeholder="blur"
+            blurDataURL={"../"}
             alt="dagaba catégories image"
           />
         </div>
@@ -47,9 +48,14 @@ export default async function Categories() {
       <section className={styles.categories}>
         <h4>Catégories</h4>
         <div className={styles.productContainer}>
-          {categories.map(({ name, slug }) => (
-            <CategoryItem key={name} name={name} href={`/categories/${slug}`} />
-          ))}
+          {categories &&
+            categories.map(({ name, slug }) => (
+              <CategoryItem
+                key={name}
+                name={name}
+                href={`/categories/${slug}`}
+              />
+            ))}
         </div>
       </section>
     </main>

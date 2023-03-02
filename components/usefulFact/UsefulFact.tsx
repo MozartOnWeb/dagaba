@@ -1,35 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "./styles.module.css";
 
 import { useModal } from "@/stores/ModalStore";
 
 import Modal from "../Modal/Modal";
-
-const usefulData = [
-  {
-    headline: "Impuissance sexuelle",
-    content:
-      "Il est bien connu que dans la plupart des cas ce sont les personnes âgées qui souffrent de dysfonctionnement  érectile. La majorité des gens pensent que c’est le vieillissement qui provoque ce désordre.",
-  },
-  {
-    headline: "Les infections urinaires",
-    content:
-      "Une infection urinaire est une infection qui peut toucher une ou plusieurs parties du système urinaire : les reins, les uretères, la vessie et l’urètre. Elle se manifeste le plus souvent par des douleurs.",
-  },
-  {
-    headline: "Maladies des organes internes",
-    content:
-      "Touchant 60 % de la population mondiale, la colopathie fonctionnelle est la résultante d’une malformation congénitale du colon (du gros intestin). Diagnostiquée en retard ou mal traitée, la pathologie fait des ravages en laissant des séquelles invalidantes ou occasionnant la mort.",
-  },
-  {
-    headline: "Infections sexuellement transmissibles",
-    content:
-      "Les infections sexuellement transmissibles sont donc la source principale d'infection du système urinaire chez l'homme (alors que ce mode est marginal chez la femme). Les bactéries les plus fréquemment impliquées dans les infections urinaires masculines sont les gonocoques et les chlamydias.",
-  },
-];
 
 type ContentProps = {
   headline: string;
@@ -54,9 +31,11 @@ export const UsefulFact = ({
     setContent({ headline: headline, content: content });
   };
 
-  isOpen
-    ? document.body.classList.add("active-modal")
-    : document.body.classList.remove("active-modal");
+  useEffect(() => {
+    isOpen
+      ? document.body.classList.add("active-modal")
+      : document.body.classList.remove("active-modal");
+  }, [isOpen]);
 
   return (
     <section className={styles.main}>

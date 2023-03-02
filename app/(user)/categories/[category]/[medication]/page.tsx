@@ -6,7 +6,6 @@ import { getMedication } from "@/sanity/fetch";
 
 import ScrollUp from "@/lib/ScrollUp";
 import styles from "./styles.module.css";
-import ProductImage from "@/public/images/1.jpg";
 
 const getCurrentMedication = async (medication: string) => {
   const currentMedication: Medication = await getMedication({ medication });
