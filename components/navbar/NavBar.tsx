@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useHamburgerStore } from "@/stores/useHamburgerStore";
@@ -36,6 +38,12 @@ const NavBar = () => {
 
   const isOpen = useHamburgerStore((state) => state.isOpen);
   const openHamburger = useHamburgerStore((state) => state.openHamburger);
+
+  useEffect(() => {
+    isOpen
+      ? document.body.classList.add("active-hamburger")
+      : document.body.classList.remove("active-hamburger");
+  });
 
   return (
     <>
