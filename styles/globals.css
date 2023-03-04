@@ -34,7 +34,6 @@ body.active-modal {
 body.active-hamburger {
   height: 100vh;
   overflow: hidden;
-  background-color: #fff;
 }
 
 .wrapper {
