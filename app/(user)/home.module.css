@@ -46,7 +46,7 @@
   margin-top: 3em;
 }
 
-.socialContainer > div {
+.socialContainer > a {
   background-color: var(--yellow);
   width: 7em;
   height: 6em;
@@ -55,7 +55,7 @@
   align-items: center;
 }
 
-.socialContainer > div > div {
+.socialContainer > a > div {
   background-color: var(--green);
   border-radius: 100%;
   width: 4em;
@@ -193,8 +193,8 @@
 
 /* COMMENT ON VOUS AIDE */
 .howWeHelpWrapper {
-  margin-top: 8em;
-  margin-bottom: 8em;
+  margin-block: 8em;
+  padding-block: 4em;
   height: 40em;
 
   background-color: var(--yellow);
@@ -385,6 +385,7 @@
   .howWeHelpWrapper {
     flex-direction: column;
     height: auto;
+    padding-block: 0em;
   }
   .howWeHelpWrapper .imageWrapper {
     margin-top: 2.5em;
@@ -395,6 +396,9 @@
     margin-top: 2em;
     width: 95%;
     text-align: center;
+  }
+  .helpWrapper h4 {
+    font-size: 3rem;
   }
   .checkBoxWrapper {
     margin-bottom: 2.5em;

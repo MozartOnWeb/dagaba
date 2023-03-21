@@ -49,7 +49,9 @@ const NavBar = () => {
     <>
       {isOpen && <HamburgerMenu />}
       <nav className={styles.nav}>
-        <div className={styles.logo}>DAGABA</div>
+        <Link href={"/"} className={styles.logo}>
+          DAGABA
+        </Link>
 
         {/* hamburger */}
         <div onClick={() => openHamburger()} className={styles.hamburger}>

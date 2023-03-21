@@ -1,28 +1,14 @@
 "use client";
 
-import { useRef, useState } from "react";
-
-import { PlayVideoIcon, PauseVideoIcon } from "@/public/assets/icons";
+import { useRef } from "react";
 
 import styles from "./styles.module.css";
 
 const CustomVideo = () => {
-  const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
-  const handlePlay = () => {
-    const video: any = videoRef.current;
-    if (video.paused) {
-      video.play();
-      setPlaying(true);
-    } else {
-      video.pause();
-      setPlaying(false);
-    }
-  };
-
   return (
-    <div onClick={handlePlay} className={styles.videoContainer}>
+    <div className={styles.videoContainer}>
       <video
         ref={videoRef}
         className={styles.video}
@@ -32,7 +18,6 @@ const CustomVideo = () => {
         controls={true}
         autoPlay={false}
       />
-      <div>{playing ? <PauseVideoIcon /> : <PlayVideoIcon />}</div>
     </div>
   );
 };

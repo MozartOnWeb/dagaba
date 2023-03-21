@@ -102,15 +102,11 @@ export default async function Home() {
             <h3>réseaux sociaux</h3>
             <div className={styles.socialContainer}>
               {socialNetwork.map((social) => (
-                <div key={social.name}>
+                <Link href={social.link} key={social.name}>
                   <div>
-                    <Link target={"_blank"} href={social.link}>
-                      <div>
-                        <social.Icon />
-                      </div>
-                    </Link>
+                    <social.Icon />
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
