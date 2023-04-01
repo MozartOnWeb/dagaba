@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Route): Promise<Metadata> {
   };
 }
 
-//export const revalidate = 600;
+export const revalidate = 80;
 
 export default async function Category({ params: { category } }: Route) {
   const singleCategory: Category = await getSingleCategory({ category });
@@ -49,7 +49,7 @@ export default async function Category({ params: { category } }: Route) {
         <p>{singleCategory.description}</p>
       </section>
 
-      {/* CATEGORIES SECTION */}
+      {/* MEDICATIONS SECTION */}
       <section className={styles.categories}>
         <h4>Médicaments</h4>
         <div
