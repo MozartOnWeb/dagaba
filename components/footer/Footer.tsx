@@ -26,13 +26,13 @@ const Footer = () => {
           <div className={styles.linksItem}>
             <h6>Accueil</h6>
             <p>
-              <Link href="#">Présentation</Link>
+              <a href="#presentation">Présentation</a>
             </p>
             <p>
-              <Link href={"#"}>Pourquoi nous choisir ?</Link>
+              <a href={"#why-us"}>Pourquoi nous choisir ?</a>
             </p>
             <p>
-              <Link href={"#"}>Catégories</Link>
+              <a href={"#how-we-help"}>Comment on aide ?</a>
             </p>
           </div>
           <div className={styles.linksItem}>

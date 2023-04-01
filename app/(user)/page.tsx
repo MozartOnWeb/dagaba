@@ -132,7 +132,7 @@ export default async function Home() {
       </div>
 
       {/* PRESENTATION */}
-      <section className={styles.presentation}>
+      <section id="presentation" className={styles.presentation}>
         <h4>Présentation</h4>
         <p>
           DAGABA possède aujourd’hui plus de 2000 remèdes au niveau de son
@@ -146,7 +146,7 @@ export default async function Home() {
       </section>
 
       {/* POURQUOI NOUS CHOISIR */}
-      <section className={styles.whyUsWrapper}>
+      <section id="why-us" className={styles.whyUsWrapper}>
         <h4>Pourquoi nous choisir ?</h4>
         <div>
           {whyUs.map((item) => (
@@ -163,7 +163,7 @@ export default async function Home() {
       </section>
 
       {/* COMMENT ON VOUS AIDE */}
-      <section className={styles.howWeHelpWrapper}>
+      <section id="how-we-help" className={styles.howWeHelpWrapper}>
         <div className={styles.imageWrapper}>
           <Image src={secondImage} alt="Dagaba doctor" />
         </div>
