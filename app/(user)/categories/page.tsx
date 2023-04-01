@@ -37,10 +37,12 @@ export default async function Categories() {
         </h3>
         <span className={styles.numberOfStock}>+2000 remèdes</span>
         <p>
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
+          Chez Pharmacopée Dagaba, notre mission est de fournir des remèdes
+          naturels de haute qualité à base de plantes, enracinés dans les
+          traditions ancestrales de la pharmacopée africaine. Nous sommes fiers
+          d&apos;être situés au cœur du Mali, où nous avons servi notre
+          communauté locale avec passion et engagement depuis de nombreuses
+          années.
         </p>
       </section>
 
