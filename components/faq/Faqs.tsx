@@ -11,31 +11,25 @@ const faqsArray = [
     id: 0,
     headline: "Qu'est ce que Dagaba ?",
     content:
-      "In fermentum posuere urna nec tincidunt praesent. Netus et malesuada fames ac turpis egestas. Orci sagittis eu volutpat odio facilisis. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Leo duis ut diam quam nulla porttitor massa id.",
+      "Dagaba Pharmacopée est une entreprise spécialisée dans les remèdes naturels à base de plantes, inspirés des traditions de la pharmacopée africaine. Nous proposons une vaste gamme de produits pour améliorer la santé et le bien-être, y compris des remèdes pour la digestion, la santé cardiaque, la santé sexuelle, les maladies des organes internes, et bien plus encore.",
   },
   {
     id: 1,
     headline: "Comment puis-je me procurer les médicaments ?",
     content:
-      "Quisque egestas diam in arcu cursus euismod quis viverra. At imperdiet dui accumsan sit amet nulla facilisi. Nulla malesuada pellentesque elit eget. Tincidunt eget nullam non nisi. Quam elementum pulvinar etiam non quam lacus. Elit pellentesque habitant morbi tristique senectus et netus et malesuada. ",
-  },
-  {
-    id: 2,
-    headline: "Quels sont les emplacements de vos pharmacie ?",
-    content:
-      "Eget lorem dolor sed viverra. Nam libero justo laoreet sit amet. Risus pretium quam vulputate dignissim. Duis convallis convallis tellus id interdum velit laoreet. Venenatis a condimentum vitae sapien pellentesque habitant morbi. Arcu risus quis varius quam quisque id diam. Nunc vel risus commodo viverra.",
+      "Vous pouvez facilement vous procurer les médicaments de Dagaba Pharmacopée en vous rendant dans notre pharmacie située à Torokorobougou. Nous avons une équipe dévouée de professionnels de la santé qui peuvent vous aider à trouver les produits les plus adaptés à vos besoins.",
   },
   {
     id: 3,
     headline: "Vos méthodes de créations sont-elles scientifiques ?",
     content:
-      "Ultricies mi quis hendrerit dolor magna eget est. Amet consectetur adipiscing elit ut aliquam purus sit amet. Vitae nunc sed velit dignissim sodales ut. Pulvinar sapien et ligula ullamcorper malesuada proin. Arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales.",
+      "Chez Pharmacopée Dagaba, nous croyons fermement en l'importance de la recherche scientifique pour la création de nos remèdes naturels à base de plantes. Nous suivons les normes les plus élevées en matière de contrôle de la qualité et de la sécurité pour nos ingrédients et nos produits finis.",
   },
   {
     id: 4,
     headline: "Quelles sont les maladies que vos traitements couvrent?",
     content:
-      "Adipiscing at in tellus integer. Vitae elementum curabitur vitae nunc sed velit dignissim. Rutrum tellus pellentesque eu tincidunt. Integer eget aliquet nibh praesent tristique. Sodales neque sodales ut etiam. Nibh tellus molestie nunc non blandit massa enim nec. Sapien eget mi proin sed libero enim sed.",
+      "Nous offrons une gamme de remèdes naturels à base de plantes pour aider à traiter une variété de maladies et de troubles de santé. Nos produits peuvent aider à améliorer la santé générale, la santé digestive, la santé cardiaque, la santé sexuelle, la santé des articulations, la santé respiratoire et plus encore. ",
   },
 ];
 

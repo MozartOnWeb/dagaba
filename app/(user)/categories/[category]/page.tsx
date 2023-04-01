@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { getSingleCategory, getCategoryMedications } from "@/sanity/fetch";
 import styles from "./styles.module.css";
 import { ProductItem } from "@/components/productItem/ProductItem";
+import ScrollUp from "@/lib/ScrollUp";
 
 const getCurrentCategory = async (category: string) => {
   const currentCategory: Category = await getSingleCategory({ category });
@@ -32,6 +33,7 @@ export default async function Category({ params: { category } }: Route) {
   return (
     <main className={styles.main}>
       {/* HERO SECTION */}
+      <ScrollUp />
       <section className={styles.hero}>
         <div>
           <Image
