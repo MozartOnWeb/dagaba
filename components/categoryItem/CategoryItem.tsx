@@ -8,16 +8,20 @@ import Product from "@/public/images/package.png";
 type Props = {
   href: string;
   name: string;
+  image?: string;
 };
 
-export const CategoryItem = ({ href, name }: Props) => {
+export const CategoryItem = ({ href, name, image }: Props) => {
   return (
     <div className={styles.wrapper}>
       <Link href={href}>
         <div className={styles.container}>
-          <div>
-            <Image width={700} height={700} src={Product} alt="product image" />
-          </div>
+          <Image
+            width={700}
+            height={700}
+            src={image ? image : Product}
+            alt="product image"
+          />
         </div>
         <p>{name}</p>
       </Link>

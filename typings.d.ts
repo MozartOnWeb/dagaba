@@ -33,6 +33,7 @@ interface Category extends Base {
   description: string;
   number_of_stock: number;
   slug: string;
+  image: string;
 }
 
 interface Medication extends Base {

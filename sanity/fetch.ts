@@ -7,6 +7,7 @@ export const getAllCategories = () => {
         *[_type == "category" && !(_id in path("drafts.**"))] {
             name,
             "slug": slug.current,
+            "image": image.asset -> url
         }
     `);
 };
@@ -19,6 +20,7 @@ export const getSingleCategory = ({ category }: { category: string }) => {
             name,
             description,
             number_of_stock,
+            "image": image.asset -> url
         }
     `,
     { category }

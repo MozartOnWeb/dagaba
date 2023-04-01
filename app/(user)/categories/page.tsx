@@ -49,10 +49,11 @@ export default async function Categories() {
         <h4>Catégories</h4>
         <div className={styles.productContainer}>
           {categories &&
-            categories.map(({ name, slug }) => (
+            categories.map(({ name, slug, image }) => (
               <CategoryItem
                 key={name}
                 name={name}
+                image={image}
                 href={`/categories/${slug}`}
               />
             ))}

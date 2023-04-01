@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import { getSingleCategory, getCategoryMedications } from "@/sanity/fetch";
 import styles from "./styles.module.css";
 import { ProductItem } from "@/components/productItem/ProductItem";
-import HeroImage from "@/public/images/1.jpg";
 
 const getCurrentCategory = async (category: string) => {
   const currentCategory: Category = await getSingleCategory({ category });
@@ -22,7 +21,7 @@ export async function generateMetadata({ params }: Route): Promise<Metadata> {
   };
 }
 
-export const revalidate = 600;
+//export const revalidate = 600;
 
 export default async function Category({ params: { category } }: Route) {
   const singleCategory: Category = await getSingleCategory({ category });
@@ -35,7 +34,13 @@ export default async function Category({ params: { category } }: Route) {
       {/* HERO SECTION */}
       <section className={styles.hero}>
         <div>
-          <Image priority={true} src={HeroImage} alt="category image" />
+          <Image
+            priority={true}
+            src={singleCategory.image}
+            alt="category image"
+            width={1000}
+            height={1000}
+          />
         </div>
         <h3>{singleCategory.name}</h3>
         <span className={styles.numberOfStock}>
