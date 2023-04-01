@@ -117,16 +117,16 @@ export default function About() {
         <h5>INTERVIEWS</h5>
         <div className={styles.interviewsContainer}>
           <div className={styles.singleInterview}>
-            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/jl5uWkYJSCY" />
+            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/KptwMB3r3lA" />
           </div>
           <div className={styles.singleInterview}>
-            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/jl5uWkYJSCY" />
+            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/Tw1RJcPSVP8" />
           </div>
           <div className={styles.singleInterview}>
-            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/jl5uWkYJSCY" />
+            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/LqbI6-2zgco" />
           </div>
           <div className={styles.singleInterview}>
-            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/jl5uWkYJSCY" />
+            <YoutubeIframe url="https://www.youtube-nocookie.com/embed/ddm6URfri6E" />
           </div>
         </div>
       </section>

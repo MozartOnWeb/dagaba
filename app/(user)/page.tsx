@@ -51,19 +51,19 @@ const whyUs = [
     Icon: BookIcon,
     title: "+25 ans d’expérience",
     content:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Nous sommes fiers de mettre à profit notre expérience de 25 ans en pharmacopée pour vous offrir des produits de qualité supérieure et des conseils personnalisés.",
   },
   {
     Icon: CalendarIcon,
     title: "24/7 service disponible",
     content:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Notre engagement envers vous ne s'arrête jamais - notre service est disponible 24/7 pour répondre à toutes vos questions et préoccupations en matière de santé.",
   },
   {
     Icon: HealthCareIcon,
     title: "+2000 remèdes",
     content:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Avec plus de 2000 remèdes à notre disposition, nous sommes en mesure de fournir des solutions sur mesure pour répondre à tous vos besoins en matière de santé.",
   },
 ];
 
@@ -79,7 +79,7 @@ const howWeHelp = [
   },
 ];
 
-export const revalidate = 600;
+export const revalidate = 80;
 
 export default async function Home() {
   const featuredMedications: Medication[] = await getFeaturedMedications();
@@ -132,7 +132,7 @@ export default async function Home() {
       </div>
 
       {/* PRESENTATION */}
-      <section className={styles.presentation}>
+      <section id="presentation" className={styles.presentation}>
         <h4>Présentation</h4>
         <p>
           DAGABA possède aujourd’hui plus de 2000 remèdes au niveau de son
@@ -146,7 +146,7 @@ export default async function Home() {
       </section>
 
       {/* POURQUOI NOUS CHOISIR */}
-      <section className={styles.whyUsWrapper}>
+      <section id="why-us" className={styles.whyUsWrapper}>
         <h4>Pourquoi nous choisir ?</h4>
         <div>
           {whyUs.map((item) => (
@@ -163,7 +163,7 @@ export default async function Home() {
       </section>
 
       {/* COMMENT ON VOUS AIDE */}
-      <section className={styles.howWeHelpWrapper}>
+      <section id="how-we-help" className={styles.howWeHelpWrapper}>
         <div className={styles.imageWrapper}>
           <Image src={secondImage} alt="Dagaba doctor" />
         </div>
@@ -171,10 +171,10 @@ export default async function Home() {
         <div className={styles.helpWrapper}>
           <h4>Comment Dagaba aide les patients ?</h4>
           <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            Notre équipe dévouée de professionnels de la santé travaille en
+            étroite collaboration avec nos patients pour fournir des soins
+            personnalisés et des conseils d&apos;experts en pharmacopée, pour
+            aider à améliorer leur santé et leur qualité de vie.
           </p>
 
           <div className={styles.checkBoxWrapper}>
