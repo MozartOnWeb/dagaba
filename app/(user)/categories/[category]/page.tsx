@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Route): Promise<Metadata> {
   };
 }
 
-export const revalidate = 80;
+export const revalidate = 600;
 
 export default async function Category({ params: { category } }: Route) {
   const singleCategory: Category = await getSingleCategory({ category });

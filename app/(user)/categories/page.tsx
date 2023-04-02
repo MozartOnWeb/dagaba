@@ -12,7 +12,7 @@ export const metadata = {
   description: "Les catégories de produits de DAGABA",
 };
 
-export const revalidate = 80;
+export const revalidate = 600;
 
 export default async function Categories() {
   const categories: Category[] = await getAllCategories();
