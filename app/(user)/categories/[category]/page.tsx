@@ -58,7 +58,7 @@ export default async function Category({ params: { category } }: Route) {
           className={
             medications.length <= 3
               ? styles.productContainer2
-              : styles.productContainer
+              : styles.productContainer2
           }
         >
           {medications.map((item, index) => (
