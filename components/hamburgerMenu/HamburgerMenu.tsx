@@ -69,15 +69,15 @@ export const HamburgerMenu = () => {
         <div className={styles.contactWrapper}>
           <div>
             <MapsIcon />
-            <p>Badalabougou, Avenue OUA, P.27</p>
+            <p>Bamako/Torokorobougou</p>
           </div>
           <div>
             <PhoneIcon />
-            <p>+223 78437323 / 61344035</p>
+            <p>+223 76 35 35 72</p>
           </div>
           <div>
             <MessageIcon />
-            <p>mandjoudama@gmail.com</p>
+            <p>apropham@yahoo.fr</p>
           </div>
         </div>
 
@@ -85,17 +85,29 @@ export const HamburgerMenu = () => {
         <div className={styles.socialWrapper}>
           <div className={styles.line} />
           <div className={styles.socialContainer}>
-            <Link className={styles.singleSocial} href={"https://facebook.com"}>
+            <Link
+              target={"_blank"}
+              className={styles.singleSocial}
+              href={"https://facebook.com/Mouleikaf"}
+            >
               <div>
                 <FacebookIcon />
               </div>
             </Link>
-            <Link className={styles.singleSocial} href={"https://tiktok.com"}>
+            <Link
+              target={"_blank"}
+              className={styles.singleSocial}
+              href={"https://www.tiktok.com/@dagaba14"}
+            >
               <div>
                 <TikTokIcon />
               </div>
             </Link>
-            <Link className={styles.singleSocial} href={"https://youtube.com"}>
+            <Link
+              target={"_blank"}
+              className={styles.singleSocial}
+              href={"https://www.youtube.com/@pharmacopeedagaba3363"}
+            >
               <div>
                 <YouTubeIcon />
               </div>

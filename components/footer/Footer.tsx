@@ -51,15 +51,15 @@ const Footer = () => {
             <h6>Contacts</h6>
             <div>
               <MapsIcon />
-              <p>Badalabougou, Avenue OUA, P.27</p>
+              <p>Bamako/Torokorobougou</p>
             </div>
             <div>
               <PhoneIcon />
-              <p>+223 78437323 / 61344035</p>
+              <p>+223 76 35 35 72</p>
             </div>
             <div>
               <MessageIcon />
-              <p>mandjoudama@gmail.com</p>
+              <p>apropham@yahoo.fr</p>
             </div>
           </div>
         </div>
