@@ -21,7 +21,7 @@ export const getAboutPageData = () => {
         *[_type == "a_propos" && !(_id in path("drafts.**"))][0] {
             description,
             "a_propos_image": a_propos_image.asset -> url,
-            youtube_urls: youtube_urls[0] {
+            "youtube_urls": youtube_urls[0] {
                 url1,
                 url2,
                 url3,
