@@ -1,6 +1,32 @@
 import { groq } from "next-sanity";
 import { sanityClient } from "./client";
 
+//get home page data
+export const getHomePageData = () => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == "accueil" && !(_id in path("drafts.**"))][0] {
+            description,
+            "image_daccueil": image_daccueil.asset -> url,
+            video_de_presentation,
+            "comment_dagaba_aide_image": comment_dagaba_aide_image.asset -> url
+        }
+    `
+  );
+};
+
+//get about page data
+export const getAboutPageData = () => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == "about" && !(_id in path("drafts.**"))][0] {
+            description,
+            "image": image.asset -> url
+        }
+    `
+  );
+};
+
 //get all categories
 export const getAllCategories = () => {
   return sanityClient.fetch(groq`
