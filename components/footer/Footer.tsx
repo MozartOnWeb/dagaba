@@ -69,21 +69,24 @@ const Footer = () => {
         <div className={styles.separatorLine} />
         <div className={styles.socialWrapper}>
           <div>
-            <Link href={"https://facebook.com"}>
+            <Link target={"_blank"} href={"https://facebook.com/Mouleikaf"}>
               <div>
                 <FacebookIcon invert />
               </div>
             </Link>
           </div>
           <div>
-            <Link href={"https://tiktok.com"}>
+            <Link target={"_blank"} href={"https://www.tiktok.com/@dagaba14"}>
               <div>
                 <TikTokIcon invert />
               </div>
             </Link>
           </div>
           <div>
-            <Link href={"https://youtube.com"}>
+            <Link
+              target={"_blank"}
+              href={"https://www.youtube.com/@pharmacopeedagaba3363"}
+            >
               <div>
                 <YouTubeIcon invert />
               </div>
