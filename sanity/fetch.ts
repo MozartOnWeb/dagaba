@@ -43,6 +43,15 @@ export const getAllCategories = () => {
     `);
 };
 
+//get all medications
+export const getAllMedications = () => {
+  return sanityClient.fetch(groq`
+        *[_type == "medication" && !(_id in path("drafts.**"))] {
+            "slug": slug.current,
+        }
+    `);
+};
+
 //get single category
 export const getSingleCategory = ({ category }: { category: string }) => {
   return sanityClient.fetch(
