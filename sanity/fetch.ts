@@ -1,6 +1,37 @@
 import { groq } from "next-sanity";
 import { sanityClient } from "./client";
 
+//get home page data
+export const getHomePageData = () => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == "accueil" && !(_id in path("drafts.**"))][0] {
+            "image_daccueil": image_daccueil.asset -> url,
+            video_de_presentation,
+            "comment_dagaba_aide_image": comment_dagaba_aide_image.asset -> url
+        }
+    `
+  );
+};
+
+//get about page data
+export const getAboutPageData = () => {
+  return sanityClient.fetch(
+    groq`
+        *[_type == "a_propos" && !(_id in path("drafts.**"))][0] {
+            description,
+            "a_propos_image": a_propos_image.asset -> url,
+            "youtube_urls": youtube_urls[0] {
+                url1,
+                url2,
+                url3,
+                url4
+            },
+        }
+    `
+  );
+};
+
 //get all categories
 export const getAllCategories = () => {
   return sanityClient.fetch(groq`
@@ -8,6 +39,15 @@ export const getAllCategories = () => {
             name,
             "slug": slug.current,
             "image": image.asset -> url
+        }
+    `);
+};
+
+//get all medications
+export const getAllMedications = () => {
+  return sanityClient.fetch(groq`
+        *[_type == "medication" && !(_id in path("drafts.**"))] {
+            "slug": slug.current,
         }
     `);
 };

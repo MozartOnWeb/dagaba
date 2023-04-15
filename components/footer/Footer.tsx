@@ -51,15 +51,15 @@ const Footer = () => {
             <h6>Contacts</h6>
             <div>
               <MapsIcon />
-              <p>Badalabougou, Avenue OUA, P.27</p>
+              <p>Bamako/Torokorobougou</p>
             </div>
             <div>
               <PhoneIcon />
-              <p>+223 78437323 / 61344035</p>
+              <p>+223 76 35 35 72</p>
             </div>
             <div>
               <MessageIcon />
-              <p>mandjoudama@gmail.com</p>
+              <p>apropham@yahoo.fr</p>
             </div>
           </div>
         </div>
@@ -69,21 +69,24 @@ const Footer = () => {
         <div className={styles.separatorLine} />
         <div className={styles.socialWrapper}>
           <div>
-            <Link href={"https://facebook.com"}>
+            <Link target={"_blank"} href={"https://facebook.com/Mouleikaf"}>
               <div>
                 <FacebookIcon invert />
               </div>
             </Link>
           </div>
           <div>
-            <Link href={"https://tiktok.com"}>
+            <Link target={"_blank"} href={"https://www.tiktok.com/@dagaba14"}>
               <div>
                 <TikTokIcon invert />
               </div>
             </Link>
           </div>
           <div>
-            <Link href={"https://youtube.com"}>
+            <Link
+              target={"_blank"}
+              href={"https://www.youtube.com/@pharmacopeedagaba3363"}
+            >
               <div>
                 <YouTubeIcon invert />
               </div>

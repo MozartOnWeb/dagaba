@@ -31,17 +31,17 @@ export const metadata = {
 const socialNetwork = [
   {
     name: "Facebook",
-    link: "https://facebook.com",
+    link: "https://facebook.com/Mouleikaf",
     Icon: FacebookIcon,
   },
   {
     name: "TikTok",
-    link: "https://tiktok.com",
+    link: "https://www.tiktok.com/@dagaba14",
     Icon: TikTokIcon,
   },
   {
     name: "YouTube",
-    link: "https://youtube.com",
+    link: "https://www.youtube.com/@pharmacopeedagaba3363",
     Icon: YouTubeIcon,
   },
 ];
@@ -102,7 +102,7 @@ export default async function Home() {
             <h3>réseaux sociaux</h3>
             <div className={styles.socialContainer}>
               {socialNetwork.map((social) => (
-                <Link href={social.link} key={social.name}>
+                <Link target={"_blank"} href={social.link} key={social.name}>
                   <div>
                     <social.Icon />
                   </div>
