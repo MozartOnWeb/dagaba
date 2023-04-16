@@ -1,7 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getRecentMedications, getFeaturedMedications } from "@/sanity/fetch";
+import {
+  getRecentMedications,
+  getFeaturedMedications,
+  getHomePageData,
+} from "@/sanity/fetch";
 
 import CustomVideo from "@/components/customVideo/CustomVideo";
 import Faqs from "@/components/faq/Faqs";
@@ -22,6 +26,7 @@ import {
 
 import firstImage from "@/public/images/1.jpg";
 import secondImage from "@/public/images/2.jpg";
+import { YoutubeIframe } from "@/components/YoutubeIframe/YoutubeIframe";
 
 export const metadata = {
   title: "Accueil",
@@ -79,10 +84,14 @@ const howWeHelp = [
   },
 ];
 
-export const revalidate = 600;
+export const revalidate = 80;
 
 export default async function Home() {
   const featuredMedications: Medication[] = await getFeaturedMedications();
+  const homePageData: Home = await getHomePageData();
+
+  const { video_de_presentation, image_daccueil, comment_dagaba_aide_image } =
+    homePageData;
 
   return (
     <main>
@@ -117,7 +126,7 @@ export default async function Home() {
             <Image
               placeholder="blur"
               priority={true}
-              src={firstImage}
+              src={image_daccueil ? image_daccueil : firstImage}
               alt="DAGABA welcome image"
             />
           </div>
@@ -141,7 +150,7 @@ export default async function Home() {
           APROPHAM DAGABA.
         </p>
         <div>
-          <CustomVideo />
+          <YoutubeIframe url="" />
         </div>
       </section>
 
