@@ -6,9 +6,9 @@ type Route = {
 };
 
 interface Home {
-  image_daccueil: string;
-  video_de_presentation: string;
-  comment_dagaba_aide_image: string;
+  hero_image: string;
+  presentation_video: string;
+  helps_image: string;
 }
 
 type Base = {

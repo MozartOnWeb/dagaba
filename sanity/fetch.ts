@@ -6,9 +6,9 @@ export const getHomePageData = () => {
   return sanityClient.fetch(
     groq`
         *[_type == "accueil" && !(_id in path("drafts.**"))][0] {
-            "image_daccueil": image_daccueil.asset -> url,
-            video_de_presentation,
-            "comment_dagaba_aide_image": comment_dagaba_aide_image.asset -> url
+            "hero_image": hero_image.asset -> url,
+            presentation_video,
+            "helps_image": helps_image.asset -> url
         }
     `
   );

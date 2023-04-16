@@ -90,8 +90,7 @@ export default async function Home() {
   const featuredMedications: Medication[] = await getFeaturedMedications();
   const homePageData: Home = await getHomePageData();
 
-  const { video_de_presentation, image_daccueil, comment_dagaba_aide_image } =
-    homePageData;
+  const { helps_image, hero_image, presentation_video } = homePageData;
 
   return (
     <main>
@@ -125,9 +124,12 @@ export default async function Home() {
           <div>
             <Image
               placeholder="blur"
+              blurDataURL={hero_image}
               priority={true}
-              src={image_daccueil ? image_daccueil : firstImage}
+              src={hero_image ? hero_image : firstImage}
               alt="DAGABA welcome image"
+              width={800}
+              height={800}
             />
           </div>
         </section>
@@ -150,7 +152,7 @@ export default async function Home() {
           APROPHAM DAGABA.
         </p>
         <div>
-          <YoutubeIframe id="10YNSQ1AfYw" />
+          <YoutubeIframe id={presentation_video} />
         </div>
       </section>
 
@@ -174,7 +176,12 @@ export default async function Home() {
       {/* COMMENT ON VOUS AIDE */}
       <section id="how-we-help" className={styles.howWeHelpWrapper}>
         <div className={styles.imageWrapper}>
-          <Image src={secondImage} alt="Dagaba doctor" />
+          <Image
+            src={helps_image ? helps_image : secondImage}
+            alt="Dagaba doctor"
+            width={700}
+            height={700}
+          />
         </div>
 
         <div className={styles.helpWrapper}>
