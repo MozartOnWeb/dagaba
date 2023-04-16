@@ -5,6 +5,12 @@ type Route = {
   };
 };
 
+interface Home {
+  image_daccueil: string;
+  video_de_presentation: string;
+  comment_dagaba_aide_image: string;
+}
+
 type Base = {
   _createdAt: string;
   _id: string;
