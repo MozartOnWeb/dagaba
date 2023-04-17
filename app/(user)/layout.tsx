@@ -12,14 +12,14 @@ export const metadata = {
     template: "%s | DAGABA",
   },
   description:
-    "DAGABA, la nature aux bons soins des humains. DAGABA possède aujourd’hui plus de 2000 remèdes au niveau de son cabinet et les recherches continuent. La santé, la propriété, la paix, le développement ont toujours été l’objectif constamment visé par APROPHAM DAGABA.",
-  keywords: ["Dagaba", "APROPHAM", "Mouleikafou"],
+    "DAGABA, la nature aux bons soins des humains. La santé, la propriété, la paix, le développement ont toujours été l’objectif constamment visé par APROPHAM DAGABA.",
+  keywords: ["Dagaba", "APROPHAM", "Mouleikafou", "Mouleikaf"],
   openGraph: {
-    title: "Dagaba | APROPHAM Mouleikafou",
+    title: "DAGABA - CHEZ MOULEIKAFOU",
     description:
-      "DAGABA, la nature aux bons soins des humains. DAGABA possède aujourd’hui plus de 2000 remèdes au niveau de son cabinet et les recherches continuent. La santé, la propriété, la paix, le développement ont toujours été l’objectif constamment visé par APROPHAM DAGABA.",
+      "DAGABA, la nature aux bons soins des humains. La santé, la propriété, la paix, le développement ont toujours été l’objectif constamment visé par APROPHAM DAGABA.",
     url: "https://dagaba.net",
-    siteName: "Dagaba | APROPHAM Mouleikafou",
+    siteName: "DAGABA - CHEZ MOULEIKAFOU",
     images: [
       {
         url: "https://dagaba.net/opengraph-image.jpg",
