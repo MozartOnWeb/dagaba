@@ -29,26 +29,27 @@ export const About: SchemaTypeDefinition = {
       of: [
         {
           type: "object",
+
           fields: [
             {
-              name: "url1",
-              title: "URL 1",
-              type: "url",
+              name: "id1",
+              title: "ID 1",
+              type: "string",
             },
             {
-              name: "url2",
-              title: "URL 2",
-              type: "url",
+              name: "id2",
+              title: "ID 2",
+              type: "string",
             },
             {
-              name: "url3",
-              title: "URL 3",
-              type: "url",
+              name: "id3",
+              title: "ID 3",
+              type: "string",
             },
             {
-              name: "url4",
-              title: "URL 4",
-              type: "url",
+              name: "id4",
+              title: "ID 4",
+              type: "string",
             },
           ],
         },

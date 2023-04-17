@@ -11,6 +11,17 @@ interface Home {
   helps_image: string;
 }
 
+interface About {
+  description: string;
+  a_propos_image: string;
+  youtube_urls: {
+    id1: string;
+    id2: string;
+    id3: string;
+    id4: string;
+  };
+}
+
 type Base = {
   _createdAt: string;
   _id: string;

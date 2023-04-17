@@ -19,13 +19,12 @@ export const getAboutPageData = () => {
   return sanityClient.fetch(
     groq`
         *[_type == "a_propos" && !(_id in path("drafts.**"))][0] {
-            description,
             "a_propos_image": a_propos_image.asset -> url,
             "youtube_urls": youtube_urls[0] {
-                url1,
-                url2,
-                url3,
-                url4
+                id1,
+                id2,
+                id3,
+                id4
             },
         }
     `

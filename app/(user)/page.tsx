@@ -1,13 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import {
-  getRecentMedications,
-  getFeaturedMedications,
-  getHomePageData,
-} from "@/sanity/fetch";
+import { getFeaturedMedications, getHomePageData } from "@/sanity/fetch";
 
-import CustomVideo from "@/components/customVideo/CustomVideo";
 import Faqs from "@/components/faq/Faqs";
 import { ProductItem } from "@/components/productItem/ProductItem";
 
@@ -84,7 +79,7 @@ const howWeHelp = [
   },
 ];
 
-export const revalidate = 80;
+export const revalidate = 60;
 
 export default async function Home() {
   const featuredMedications: Medication[] = await getFeaturedMedications();

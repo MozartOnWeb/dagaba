@@ -4,14 +4,20 @@ import styles from "./styles.module.css";
 
 import { YoutubeIframe } from "@/components/YoutubeIframe/YoutubeIframe";
 
-import img from "@/public/images/4.jpg";
+import { getAboutPageData } from "@/sanity/fetch";
 
 export const metadata = {
   title: "A Propos",
   description: "Ce qu'il faut savoir sur DAGABA",
 };
 
-export default function About() {
+export const revalidate = 60;
+
+export default async function About() {
+  const AboutPageData: About = await getAboutPageData();
+
+  const { a_propos_image, youtube_urls } = AboutPageData;
+
   return (
     <main className={styles.main}>
       <section className={styles.hero}>
@@ -23,7 +29,15 @@ export default function About() {
           </h2>
         </div>
         <div className={styles.imageWrapper}>
-          <Image priority src={img} alt={"img"} />
+          <Image
+            priority
+            placeholder="blur"
+            blurDataURL={a_propos_image}
+            src={a_propos_image}
+            alt={"Photo de Mouleikaf"}
+            width={800}
+            height={800}
+          />
         </div>
       </section>
 
@@ -117,16 +131,16 @@ export default function About() {
         <h5>INTERVIEWS</h5>
         <div className={styles.interviewsContainer}>
           <div className={styles.singleInterview}>
-            <YoutubeIframe id="KptwMB3r3lA" />
+            <YoutubeIframe id={youtube_urls.id1} />
           </div>
           <div className={styles.singleInterview}>
-            <YoutubeIframe id="Tw1RJcPSVP8" />
+            <YoutubeIframe id={youtube_urls.id2} />
           </div>
           <div className={styles.singleInterview}>
-            <YoutubeIframe id="LqbI6-2zgco" />
+            <YoutubeIframe id={youtube_urls.id3} />
           </div>
           <div className={styles.singleInterview}>
-            <YoutubeIframe id="ddm6URfri6E" />
+            <YoutubeIframe id={youtube_urls.id4} />
           </div>
         </div>
       </section>
