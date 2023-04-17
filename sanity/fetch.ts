@@ -6,9 +6,9 @@ export const getHomePageData = () => {
   return sanityClient.fetch(
     groq`
         *[_type == "accueil" && !(_id in path("drafts.**"))][0] {
-            "image_daccueil": image_daccueil.asset -> url,
-            video_de_presentation,
-            "comment_dagaba_aide_image": comment_dagaba_aide_image.asset -> url
+            "hero_image": hero_image.asset -> url,
+            presentation_video,
+            "helps_image": helps_image.asset -> url
         }
     `
   );
@@ -19,13 +19,12 @@ export const getAboutPageData = () => {
   return sanityClient.fetch(
     groq`
         *[_type == "a_propos" && !(_id in path("drafts.**"))][0] {
-            description,
             "a_propos_image": a_propos_image.asset -> url,
             "youtube_urls": youtube_urls[0] {
-                url1,
-                url2,
-                url3,
-                url4
+                id1,
+                id2,
+                id3,
+                id4
             },
         }
     `

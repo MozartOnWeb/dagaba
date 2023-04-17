@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getRecentMedications, getFeaturedMedications } from "@/sanity/fetch";
+import { getFeaturedMedications, getHomePageData } from "@/sanity/fetch";
 
-import CustomVideo from "@/components/customVideo/CustomVideo";
 import Faqs from "@/components/faq/Faqs";
 import { ProductItem } from "@/components/productItem/ProductItem";
 
@@ -22,6 +21,7 @@ import {
 
 import firstImage from "@/public/images/1.jpg";
 import secondImage from "@/public/images/2.jpg";
+import { YoutubeIframe } from "@/components/YoutubeIframe/YoutubeIframe";
 
 export const metadata = {
   title: "Accueil",
@@ -79,10 +79,13 @@ const howWeHelp = [
   },
 ];
 
-export const revalidate = 600;
+export const revalidate = 60;
 
 export default async function Home() {
   const featuredMedications: Medication[] = await getFeaturedMedications();
+  const homePageData: Home = await getHomePageData();
+
+  const { helps_image, hero_image, presentation_video } = homePageData;
 
   return (
     <main>
@@ -116,9 +119,12 @@ export default async function Home() {
           <div>
             <Image
               placeholder="blur"
+              blurDataURL={hero_image}
               priority={true}
-              src={firstImage}
+              src={hero_image ? hero_image : firstImage}
               alt="DAGABA welcome image"
+              width={800}
+              height={800}
             />
           </div>
         </section>
@@ -141,7 +147,7 @@ export default async function Home() {
           APROPHAM DAGABA.
         </p>
         <div>
-          <CustomVideo />
+          <YoutubeIframe id={presentation_video} />
         </div>
       </section>
 
@@ -165,7 +171,12 @@ export default async function Home() {
       {/* COMMENT ON VOUS AIDE */}
       <section id="how-we-help" className={styles.howWeHelpWrapper}>
         <div className={styles.imageWrapper}>
-          <Image src={secondImage} alt="Dagaba doctor" />
+          <Image
+            src={helps_image ? helps_image : secondImage}
+            alt="Dagaba doctor"
+            width={700}
+            height={700}
+          />
         </div>
 
         <div className={styles.helpWrapper}>

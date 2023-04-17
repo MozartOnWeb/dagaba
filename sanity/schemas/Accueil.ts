@@ -13,22 +13,22 @@ export const Accueil: SchemaTypeDefinition = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "image_daccueil",
+      name: "hero_image",
       type: "image",
-      title: "Image d'accueil",
+      title: "Hero Image",
       options: {
         hotspot: true,
       },
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "video_de_presentation",
-      type: "url",
+      name: "presentation_video",
+      type: "string",
       title: "Video De Presentation",
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "comment_dagaba_aide_image",
+      name: "helps_image",
       type: "image",
       title: "Comment Dagaba Aide Image",
       options: {
