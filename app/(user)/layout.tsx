@@ -42,7 +42,7 @@ export const metadata = {
     },
   },
   verification: {
-    //google: "eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw",
+    google: "VnqNuMq6MbnPKxZz24AB8vL5yqSyApAY0c7XXn2u2nU",
     other: {
       me: ["dagabamouleikafou@gmail.com", "https://dagaba.net"],
     },
